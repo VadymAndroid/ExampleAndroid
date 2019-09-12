@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="ua.mycredit.mycredit.ui.profile.credit.AgreementViewModel" />
+
+        <import type="ua.mycredit.core.AgreementType.PendingCredit" />
+
+        <variable
+            name="viewModel"
+            type="AgreementViewModel" />
+
+    </data>
+
+    <LinearLayout
+        style="@style/Fill"
+        android:orientation="vertical">
+
+        <WebView
+            android:id="@+id/PDF_View"
+            style="@style/WeightedVertically"
+            app:loadByFile="@{viewModel.file}"/>
+
+        <Button
+            android:id="@+id/credit_action"
+            style="@style/Wide.Indented.Ripple.Borderless"
+            android:background="@drawable/bg_gradient_accent"
+            android:onClick="@{() -> viewModel.showAcceptingDialog()}"
+            android:text="@string/accept_agreement"
+            android:textColor="@color/white"
+            android:visibility="@{viewModel.agreementType instanceof PendingCredit}" />
+
+    </LinearLayout>
+</layout>

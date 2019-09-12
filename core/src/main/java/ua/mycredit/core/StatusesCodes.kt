@@ -1,0 +1,27 @@
+package ua.mycredit.core
+
+const val AUTO_PROCESSING_0 = 0
+const val AUTO_PROCESSING_1 = 1
+const val AUTO_PROCESSING_2 = 2
+const val AUTO_PROCESSING_3 = 3
+const val WAITING_FOR_APPROVAL = 4
+const val APPROVED = 5
+const val REJECTED = 6
+const val ACTIVE = 7
+const val PAST_DUE = 8
+const val CLOSED_REPAID = 9
+const val CLOSED_WRITTEN_OFF = 10
+const val PENDING_PROLONGATION = 11
+const val RESTRUCTURED = 12
+const val DISBURSEMENT_FAILED = 13
+const val DISBURSEMENT_IN_PROGRESS = 14
+const val WAITING_FOR_AGREEMENT = 15
+const val AGREEMENT_EXPIRED = 16
+const val NO_CONTACT = 17
+const val SOLD = 18
+const val REJECT_UNPROCESSED_LOANS = 19
+const val AUTO_PROCESSING_21 = 21
+const val WRONG_CARD_DISBURSEMENT_FAILED = 22
+const val PERMISSION_READ_PHONE = 23
+const val PERMISSION_READ_CONTACTS = 24
+

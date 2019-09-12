@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="ua.mycredit.mycredit.ui.authentication.registration.ocupation.TemporarilyUnemployedViewModel" />
+
+        <variable
+            name="viewModel"
+            type="TemporarilyUnemployedViewModel" />
+
+    </data>
+
+
+    <LinearLayout
+        style="@style/Wide"
+        android:orientation="vertical">
+
+        <include
+            layout="@layout/income_fields"
+            app:viewModel="@{viewModel}" />
+
+        <android.support.v7.widget.CardView
+            style="@style/Wide"
+            android:layout_marginBottom="@dimen/margin_short"
+            android:layout_marginTop="@dimen/margin_short"
+            app:cardElevation="@dimen/shadow_small">
+
+            <include
+                layout="@layout/input_variant_picker"
+                app:viewModel="@{viewModel.dismissalReason}" />
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+</layout>

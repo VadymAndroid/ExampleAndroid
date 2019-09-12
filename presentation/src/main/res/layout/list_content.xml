@@ -1,0 +1,33 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="ua.mycredit.mycredit.ui.bases.ListViewModel" />
+
+        <variable
+            name="viewModel"
+            type="ListViewModel" />
+
+    </data>
+
+    <LinearLayout
+        style="@style/Fill"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/Wrapped"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/margin_huge"
+            app:textOrGone="@{viewModel.emptyMessage}" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            style="@style/Fill"
+            app:adapter="@{viewModel.recyclerViewAdapter}"
+            app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+            app:nestedScrollingEnabled="@{viewModel.nestedScrollingEnabled}" />
+
+    </LinearLayout>
+
+</layout>

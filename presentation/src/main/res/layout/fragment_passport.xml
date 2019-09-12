@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+
+        <import type="ua.mycredit.mycredit.ui.authentication.registration.passport.passport.PassportViewModel" />
+
+        <import type="ua.mycredit.mycredit.ui.authentication.registration.passport.passport.PassportViewModel.State" />
+
+        <import type="ua.mycredit.mycredit.ui.authentication.registration.passport.passport.PassportViewModel.PassportState" />
+
+        <import type="ua.mycredit.mycredit.ui.authentication.registration.passport.passport.PassportViewModel.IdCardState" />
+
+        <variable
+            name="viewModel"
+            type="PassportViewModel" />
+
+    </data>
+
+    <LinearLayout
+        style="@style/Fill"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/margin">
+
+        <TextView
+            style="@style/SignUpText.Header"
+            android:text="@string/passport_data" />
+
+        <TextView
+            style="@style/SignUpText.Title"
+            android:text="@string/passport" />
+
+        <LinearLayout
+            style="@style/Wide.Indented"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <include
+                layout="@layout/simple_button"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/button_height"
+                android:layout_marginEnd="@dimen/margin_middle"
+                android:layout_marginRight="@dimen/margin_middle"
+                android:layout_weight="1"
+                app:onClick="@{() -> viewModel.setStateToPassport()}"
+                app:primary="@{viewModel.state instanceof PassportState}"
+                app:text="@{@string/old_sample}" />
+
+            <include
+                layout="@layout/simple_button"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/button_height"
+                android:layout_weight="1"
+                app:onClick="@{() -> viewModel.setStateToIdCard()}"
+                app:primary="@{viewModel.state instanceof IdCardState}"
+                app:text="@{@string/new_sample}" />
+
+        </LinearLayout>
+
+        <ViewSwitcher
+            style="@style/Wide"
+            app:displayedChild="@{viewModel.state instanceof PassportState ? 0 : 1}">
+
+            <LinearLayout
+                style="@style/Wide"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    style="@style/Wide.Indented"
+                    android:layout_marginTop="@dimen/margin_huge"
+                    android:baselineAligned="false">
+
+                    <include
+                        layout="@layout/input_field"
+                        android:layout_width="72dp"
+                        android:layout_height="match_parent"
+                        app:viewModel="@{viewModel.passportState.series}" />
+
+                    <include
+                        layout="@layout/input_field"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        app:viewModel="@{viewModel.passportState.number}" />
+
+                </LinearLayout>
+
+                <include
+                    layout="@layout/input_field"
+                    app:viewModel="@{viewModel.passportState.givenBy}" />
+
+                <include
+                    layout="@layout/input_field"
+                    app:drawableEnd="@{@drawable/ic_arrow_drop_down_selector}"
+                    app:viewModel="@{viewModel.passportState.issued}" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/Wide"
+                android:layout_marginTop="@dimen/margin_huge"
+                android:orientation="vertical">
+
+                <include
+                    layout="@layout/input_field"
+                    app:viewModel="@{viewModel.idCardState.record}" />
+
+                <include
+                    layout="@layout/input_field"
+                    app:viewModel="@{viewModel.idCardState.docNumber}" />
+
+                <include
+                    layout="@layout/input_field"
+                    app:viewModel="@{viewModel.idCardState.givenBy}" />
+
+                <include
+                    layout="@layout/input_field"
+                    app:drawableEnd="@{@drawable/ic_arrow_drop_down_selector}"
+                    app:viewModel="@{viewModel.idCardState.issued}" />
+
+                <include
+                    layout="@layout/input_field"
+                    app:drawableEnd="@{@drawable/ic_arrow_drop_down_selector}"
+                    app:viewModel="@{viewModel.idCardState.expired}" />
+
+            </LinearLayout>
+
+        </ViewSwitcher>
+
+    </LinearLayout>
+
+</layout>

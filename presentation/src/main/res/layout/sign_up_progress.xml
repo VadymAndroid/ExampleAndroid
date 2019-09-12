@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Wide">
+
+    <ua.mycredit.mycredit.ui.custom.progress.PercentageProgressPart
+        style="@style/Wrapped"
+        app:with_progress="false" />
+
+</merge>

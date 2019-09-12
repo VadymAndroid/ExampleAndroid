@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="ua.mycredit.mycredit.ui.calculator.CalculatorViewModel" />
+
+        <variable
+            name="viewModel"
+            type="CalculatorViewModel" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ViewSwitcher
+            style="@style/WeightedVertically"
+            android:layout_gravity="center_vertical"
+            app:displayedChild="@{viewModel.loading ? 1 : 0}">
+
+            <include
+                layout="@layout/calculator"
+                app:viewModel="@{viewModel}" />
+
+            <include layout="@layout/preloader_mycredit" />
+
+        </ViewSwitcher>
+
+        <Button
+            android:id="@+id/action"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@drawable/bg_gradient_accent"
+            android:enabled="@{!viewModel.loading}"
+            android:onClick="@{() -> viewModel.processAction()}"
+            android:text="@{viewModel.mode.actionText}"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:fontFamily="@string/font_family_medium" />
+
+    </LinearLayout>
+</layout>

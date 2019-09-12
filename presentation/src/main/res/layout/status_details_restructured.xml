@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="ua.mycredit.core.Restructured" />
+
+        <import type="ua.mycredit.mycredit.ui.ExtensionsKt" />
+
+        <variable
+            name="status"
+            type="Restructured" />
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout style="@style/Wide">
+
+        <TextView
+            android:id="@+id/total_debt_amount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/total_debt_amount"
+            android:textColor="@color/gray"
+            app:fontFamily="@string/font_family_medium"
+            app:layout_constraintEnd_toStartOf="@+id/view1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/total_debt_amount_val"
+            style="@style/TextSizeMedium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{@string/specific_uah_f_pennies(status.credit.outstandingBalance)}"
+            android:textColor="@color/gray_707171"
+            app:layout_constraintEnd_toStartOf="@+id/view1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/total_debt_amount" />
+
+        <View
+            android:id="@+id/view1"
+            style="@style/Divider"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/total_debt_amount_val"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/total_debt_amount" />
+
+
+        <TextView
+            android:id="@+id/paid"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_half"
+            android:layout_marginStart="@dimen/margin_half"
+            android:text="@string/paid"
+            android:textColor="@color/gray"
+            app:fontFamily="@string/font_family_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/view1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/paid_val"
+            style="@style/TextSizeMedium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_half"
+            android:layout_marginStart="@dimen/margin_half"
+            android:text="@{@string/specific_uah_f_pennies(status.totalRepaidAmount)}"
+            android:textColor="@color/blue_1480CB"
+            app:fontFamily="@string/font_family_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/view1"
+            app:layout_constraintTop_toBottomOf="@+id/paid" />
+
+        <TextView
+            android:id="@+id/next_date_payment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin"
+            android:text="@string/next_date_payment"
+            android:textColor="@color/gray"
+            app:fontFamily="@string/font_family_medium"
+            app:layout_constraintEnd_toEndOf="@+id/total_debt_amount_val"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/total_debt_amount_val" />
+
+        <TextView
+            android:id="@+id/next_date_payment_val"
+            style="@style/TextSizeMedium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text='@{ExtensionsKt.printByStyle(status.nextPaymentDate, "L-")}'
+            android:textColor="@color/gray_707171"
+            app:layout_constraintEnd_toEndOf="@+id/next_date_payment"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/next_date_payment" />
+
+        <View
+            android:id="@+id/view2"
+            style="@style/Divider"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/next_date_payment_val"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/next_date_payment" />
+
+        <TextView
+            android:id="@+id/next_payment_amount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_half"
+            android:layout_marginStart="@dimen/margin_half"
+            android:text="@string/next_payment_amount"
+            android:textColor="@color/gray"
+            app:fontFamily="@string/font_family_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/view2"
+            app:layout_constraintTop_toTopOf="@+id/view2" />
+
+        <TextView
+            android:id="@+id/next_payment_amount_val"
+            style="@style/TextSizeMedium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_half"
+            android:layout_marginStart="@dimen/margin_half"
+            android:text="@{@string/specific_uah_f_pennies(status.nextPaymentAmount)}"
+            android:textColor="@color/blue_1480CB"
+            app:fontFamily="@string/font_family_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/view2"
+            app:layout_constraintTop_toBottomOf="@+id/next_payment_amount" />
+
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

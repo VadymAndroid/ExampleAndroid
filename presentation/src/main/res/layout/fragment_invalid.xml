@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="ua.mycredit.mycredit.ui.authentication.registration.ocupation.InvalidViewModel" />
+
+        <import type="ua.mycredit.core.GroupDisability" />
+
+        <variable
+            name="viewModel"
+            type="InvalidViewModel" />
+
+    </data>
+
+
+    <LinearLayout
+        style="@style/Wide"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.CardView
+            style="@style/Wide"
+            android:layout_marginBottom="@dimen/margin_short"
+            android:layout_marginTop="@dimen/margin_short"
+            app:cardElevation="@dimen/shadow_small">
+
+            <LinearLayout
+                style="@style/Wide"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/Wrapped"
+                    android:layout_margin="@dimen/margin"
+                    android:text="@string/group_disability" />
+
+                <LinearLayout
+                    style="@style/Wide.Indented"
+                    android:layout_marginBottom="@dimen/margin_short"
+                    android:baselineAligned="false">
+
+                    <include
+                        layout="@layout/simple_button"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/button_height"
+                        android:layout_marginEnd="@dimen/margin_middle"
+                        android:layout_marginRight="@dimen/margin_middle"
+                        android:layout_weight="1"
+                        app:onClick="@{() -> viewModel.setGroup(GroupDisability.FIRST)}"
+                        app:primary="@{viewModel.groupDisability == GroupDisability.FIRST}"
+                        app:text="@{@string/_1}" />
+
+                    <include
+                        layout="@layout/simple_button"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/button_height"
+                        android:layout_marginEnd="@dimen/margin_middle"
+                        android:layout_marginRight="@dimen/margin_middle"
+                        android:layout_weight="1"
+                        app:onClick="@{() -> viewModel.setGroup(GroupDisability.SECOND)}"
+                        app:primary="@{viewModel.groupDisability == GroupDisability.SECOND}"
+                        app:text="@{@string/_2}" />
+
+                    <include
+                        layout="@layout/simple_button"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/button_height"
+                        android:layout_weight="1"
+                        app:onClick="@{() -> viewModel.setGroup(GroupDisability.THIRD)}"
+                        app:primary="@{viewModel.groupDisability == GroupDisability.THIRD}"
+                        app:text="@{@string/_3}" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <include
+            layout="@layout/income_fields"
+            app:viewModel="@{viewModel}" />
+
+    </LinearLayout>
+
+</layout>

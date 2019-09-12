@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="ua.mycredit.mycredit.ui.profile.profile.faq.FaqActivity.FaqAdapter.FaqViewHolder" />
+
+        <import type="android.graphics.Typeface" />
+
+        <variable
+            name="viewModel"
+            type="FaqViewHolder" />
+    </data>
+
+    <LinearLayout
+        style="@style/Wide"
+        android:onClick="@{() -> viewModel.onQuestion()}"
+        android:orientation="vertical">
+
+        <LinearLayout
+            style="@style/Wide"
+            android:orientation="horizontal"
+            android:padding="@dimen/margin"
+            tools:ignore="UseCompoundDrawables">
+
+            <TextView
+                android:id="@+id/question"
+                style="@style/WeightedHorizontallyWrapped"
+                android:text="@{viewModel.question}"
+                android:textAppearance="@android:style/TextAppearance.Medium"
+                android:textColor="@color/black"
+                tools:text="Почему мы?" />
+
+            <ImageView
+                style="@style/Wrapped"
+                android:rotation="@{viewModel.expanded ? 180 : 0}"
+                android:src="@drawable/ic_arrow_black"
+                tools:ignore="ContentDescription" />
+
+        </LinearLayout>
+
+        <net.cachapa.expandablelayout.ExpandableLayout
+            style="@style/Wide"
+            app:expanded="@{viewModel.expanded}"
+            app:onExpansionUpdateListener="@{(expansionFraction, state) -> viewModel.onExpansion(state)}">
+
+            <TextView
+                style="@style/Wide"
+                android:paddingBottom="@dimen/margin"
+                android:paddingEnd="@dimen/margin"
+                android:paddingLeft="@dimen/margin_big"
+                android:paddingRight="@dimen/margin"
+                android:paddingStart="@dimen/margin_big"
+                android:textColor="@color/black"
+                app:answer="@{viewModel.answer}"
+                app:onPhoneClick="@{viewModel::onPhoneClick}"
+                tools:text="Sed ut perspiciatis, unde omnis iste quo voluptas nulla pariatur? At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint, obcaecati cupiditate non provident, similique sunt in culpa, qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio, cumque nihil impedit." />
+
+        </net.cachapa.expandablelayout.ExpandableLayout>
+
+        <View style="@style/Divider.Horizontal" />
+
+    </LinearLayout>
+</layout>

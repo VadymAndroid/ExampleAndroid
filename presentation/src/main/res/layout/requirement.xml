@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="title"
+            type="String" />
+
+        <variable
+            name="satisfied"
+            type="boolean" />
+
+    </data>
+
+    <TextView
+        style="@style/Wide.Indented"
+        android:layout_marginBottom="2dp"
+        android:layout_marginTop="2dp"
+        android:drawableLeft="@{satisfied ? @drawable/ic_check_green : @drawable/ic_not_check_red, default=@drawable/ic_check_green}"
+        android:drawablePadding="@dimen/margin"
+        android:drawableStart="@{satisfied ? @drawable/ic_check_green : @drawable/ic_not_check_red, default=@drawable/ic_check_green}"
+        android:gravity="center|start"
+        android:text="@{title, default=Required}"
+        android:textColor="@{satisfied ? @color/green : @color/red, default=@color/green}" />
+
+</layout>

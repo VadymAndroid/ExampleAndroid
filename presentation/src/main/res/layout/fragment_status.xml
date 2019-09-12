@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="ua.mycredit.mycredit.ui.profile.credit.StatusViewModel" />
+
+        <import type="ua.mycredit.core.Sold" />
+
+        <import type="ua.mycredit.core.NoCredits" />
+
+        <import type="ua.mycredit.core.Restructured" />
+
+        <import type="ua.mycredit.core.PastDue" />
+
+        <import type="ua.mycredit.core.Closed" />
+
+        <import type="ua.mycredit.mycredit.mapping.CreditStatusKt" />
+
+        <import type="ua.mycredit.core.ContractAddition" />
+
+        <import type="ua.mycredit.core.EntitiesKt" />
+
+        <import type="android.view.View" />
+
+        <import type="android.text.TextUtils" />
+
+        <variable
+            name="viewModel"
+            type="StatusViewModel" />
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        style="@style/Fill"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/alerts"
+            style="@style/Wide"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                style="@style/Wide.Indented.AlertTextViewStyle"
+                android:visibility="@{viewModel.notEnoughInformationAlertEnabled &amp;&amp; viewModel.status != null}"
+                app:clickableText="@{@string/profile}"
+                app:highlightClick="@{() -> viewModel.goToProfile()}"
+                app:highlightColor="@{@color/red_DB5C60}"
+                app:plainText="@{@string/alert_not_enough_information}"
+                app:underline="@{true}"
+                tools:text="@string/alert_not_enough_information" />
+
+            <TextView
+                style="@style/Wide.Indented.AlertTextViewStyle"
+                android:visibility="@{viewModel.noVerifiedCardAlertEnabled &amp;&amp; viewModel.status != null}"
+                app:clickableText="@{@string/my_cards}"
+                app:highlightClick="@{() -> viewModel.goToCardsList()}"
+                app:highlightColor="@{@color/red_DB5C60}"
+                app:plainText="@{@string/alert_no_verified_card}"
+                app:underline="@{true}"
+                tools:text="@string/alert_no_verified_card" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/greeting"
+            style="@style/Wide.Indented"
+            android:layout_marginTop="@dimen/margin"
+            android:gravity="center"
+            android:text="@{@string/greeting_pattern(TextUtils.isEmpty(viewModel.profile.name) ? @string/name_not_specified : viewModel.profile.name)}"
+            android:textAppearance="@android:style/TextAppearance"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:visibility="@{viewModel.status != null}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/alerts"
+            tools:text="Добрый день, Анна" />
+
+        <ViewSwitcher
+            android:id="@+id/diagram"
+            style="@style/Wrapped"
+            android:layout_marginTop="@dimen/margin"
+            android:visibility="@{viewModel.status == null ? View.INVISIBLE : View.VISIBLE}"
+            app:displayedChild="@{viewModel.status instanceof Restructured ? 0 : 1}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/greeting">
+
+            <ua.mycredit.mycredit.ui.custom.credit.RestructuredCreditDetailsView
+                android:layout_width="match_parent"
+                android:layout_height="320dp"
+                app:restructured="@{viewModel.status instanceof Restructured ? (Restructured) viewModel.status : null}" />
+
+            <ua.mycredit.mycredit.ui.custom.credit.TitledSeekArc
+                style="@style/Wide.Indented"
+                android:layout_height="320dp"
+                android:layout_gravity="center"
+                android:padding="32dp"
+                android:paddingTop="@dimen/margin"
+                app:arcWidth="32dp"
+                app:progressWidth="32dp"
+                app:rotation="210"
+                app:startAngle="20"
+                app:statusParams="@{viewModel.status}"
+                app:sweepAngle="260" />
+
+        </ViewSwitcher>
+
+        <TextView
+            android:id="@+id/credit_status_name"
+            style="@style/Wrapped"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/margin_big"
+            android:gravity="center"
+            android:minWidth="120dp"
+            android:paddingBottom="@dimen/margin_tiny"
+            android:paddingLeft="@dimen/margin_half"
+            android:paddingRight="@dimen/margin_half"
+            android:paddingTop="@dimen/margin_tiny"
+            android:textAllCaps="true"
+            android:textAppearance="@android:style/TextAppearance"
+            app:creditStatusName="@{viewModel.status}"
+            app:fontFamily="sans-serif-medium"
+            app:layout_constraintBottom_toBottomOf="@+id/diagram"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:background="@drawable/bg_credit_status_controls_green"
+            tools:text="@string/credit_status_name_active"
+            tools:textColor="@color/green" />
+
+        <ViewSwitcher
+            android:id="@+id/credit_params"
+            style="@style/Wide"
+            android:visibility="@{!(viewModel.status instanceof Restructured)}"
+            app:displayedChild="@{viewModel.status == null ? 0 : 1}"
+            app:layout_constraintBottom_toBottomOf="@+id/credit_status_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/diagram">
+
+            <ImageView
+                style="@style/Fill"
+                android:contentDescription="@null"
+                android:scaleType="center"
+                android:src="@drawable/ic_logo_splash" />
+
+            <LinearLayout
+                style="@style/Fill"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/Wrapped"
+                    android:layout_marginTop="@dimen/margin_huge"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    app:creditStatusTitle="@{viewModel.status}"
+                    app:fontFamily="sans-serif-medium"
+                    tools:text="@string/your_current_credit" />
+
+                <TextView
+                    style="@style/Wrapped"
+                    android:layout_marginBottom="36dp"
+                    android:layout_marginTop="30dp"
+                    android:textColor="@color/black"
+                    app:creditAmountByStatus="@{viewModel.status}"
+                    tools:text="1000 грн" />
+
+                <TextView
+                    style="@style/Wrapped"
+                    android:layout_marginBottom="@dimen/margin_huge"
+                    android:drawableEnd="@drawable/gray_circle_4dp"
+                    android:drawableLeft="@drawable/gray_circle_4dp"
+                    android:drawablePadding="4dp"
+                    android:drawableRight="@drawable/gray_circle_4dp"
+                    android:drawableStart="@drawable/gray_circle_4dp"
+                    android:gravity="center"
+                    android:textAppearance="@android:style/TextAppearance"
+                    android:textColor="#959595"
+                    app:fontFamily="sans-serif"
+                    app:statusFooter="@{viewModel.status}"
+                    tools:text="@string/arc_credit_before_pattern" />
+
+            </LinearLayout>
+
+        </ViewSwitcher>
+
+        <include
+            android:id="@+id/credit_status_description"
+            style="@style/Wide.Indented"
+            layout="@layout/credit_status_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_big"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/credit_status_name"
+            app:viewModel="@{viewModel}" />
+
+        <Button
+            android:id="@+id/credit_action"
+            style="@style/Wide.Indented.Ripple.Borderless"
+            android:layout_marginTop="@dimen/margin"
+            android:onClick="@{() -> viewModel.creditAction()}"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/credit_status_description"
+            app:statusActionButtonParams="@{viewModel.status}"
+            tools:background="@drawable/bg_gradient_accent"
+            tools:text="@string/choose_credit" />
+
+        <Button
+            android:id="@+id/repay_part"
+            style="@style/Wide.Indented"
+            android:layout_marginTop="@dimen/margin"
+            android:background="@drawable/bg_button_gradient_primary"
+            android:onClick="@{() -> viewModel.repayRestructuredStep()}"
+            android:text="@string/repay_restructured_part"
+            android:textColor="@color/white"
+            android:visibility="@{viewModel.status instanceof Restructured}"
+            app:layout_constraintTop_toBottomOf="@id/credit_action" />
+
+        <ViewSwitcher
+            android:id="@+id/contract_addition"
+            style="@style/Wide"
+            android:layout_marginTop="@dimen/margin"
+            android:visibility="@{EntitiesKt.getCanProlong(viewModel.status) &amp;&amp; viewModel.contractAdditionsVisible}"
+            app:displayedChild="@{viewModel.contractAdditionsLoading ? 0 : 1}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/repay_part">
+
+            <ProgressBar
+                style="@style/Wrapped"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/margin"
+                app:indeterminateTintList="@{@color/colorPrimaryDark}" />
+
+            <android.support.v7.widget.RecyclerView
+                style="@style/Wide.Indented"
+                app:adapter="@{viewModel.createContractAdditionsAdapter()}"
+                app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+                app:nestedScrollingEnabled="@{false}" />
+
+        </ViewSwitcher>
+
+        <ViewFlipper
+            android:id="@+id/status_details"
+            style="@style/Wide.Indented"
+            android:layout_marginTop="@dimen/margin_big"
+            android:visibility="@{viewModel.status.credit != null &amp;&amp; !(viewModel.status instanceof Closed)}"
+            app:displayedChild="@{viewModel.status instanceof PastDue ? 0 : (viewModel.status instanceof Restructured ? 1 : 2)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/contract_addition">
+
+            <include
+                layout="@layout/status_details_past_due"
+                app:status="@{viewModel.status instanceof PastDue ? ((PastDue) viewModel.status) : null}" />
+
+            <include
+                layout="@layout/status_details_restructured"
+                app:status="@{viewModel.status instanceof Restructured ? ((Restructured) viewModel.status) : null}" />
+
+            <include
+                layout="@layout/status_details_active"
+                app:credit="@{viewModel.status.credit}" />
+
+        </ViewFlipper>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin"
+            app:layout_constraintTop_toBottomOf="@id/status_details" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="ua.mycredit.mycredit.ui.bases.input.PhoneInputDialogFragment" />
+
+        <variable
+            name="viewModel"
+            type="PhoneInputDialogFragment" />
+
+    </data>
+
+    <LinearLayout
+        style="@style/Wide.Indented"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/margin_huge">
+
+        <include
+            android:id="@+id/input_phone_number"
+            layout="@layout/input_phone_number"
+            app:viewModel="@{viewModel.dialogField}" />
+
+        <Button
+            style="@style/Wrapped"
+            android:layout_gravity="end"
+            android:background="@null"
+            android:onClick="@{() -> viewModel.attemptToPersist()}"
+            android:text="@android:string/ok"
+            android:textColor="@color/colorAccent" />
+
+    </LinearLayout>
+
+</layout>

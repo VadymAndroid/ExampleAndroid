@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="def_pointer_color">@color/colorPrimary</color>
+    <color name="def_reached_color">@color/colorAccent</color>
+    <color name="def_wheel_color">#4e4988</color>
+    <color name="def_shadow">#26000000</color>
+
+    <dimen name="def_shadow_offset">2dp</dimen>
+    <dimen name="def_shadow_radius">2dp</dimen>
+    <dimen name="def_wheel_width">32dp</dimen>
+
+    <string name="ultimate_maxLoan">15000 грн</string>
+    <string name="ultimate_minLoan">100 грн</string>
+
+    <string name="ultimate_maxDays">30 дней</string>
+    <string name="ultimate_minDays">1 день</string>
+
+    <declare-styleable name="CircleSeekBar">
+        <attr name="wheel_min_process_value" format="integer" />
+        <attr name="wheel_max_process_value" format="integer" />
+        <attr name="wheel_max_process" format="integer" />
+        <attr name="wheel_cur_process" format="integer" />
+
+        <attr name="wheel_reached_color_from" format="color" />
+        <attr name="wheel_reached_color" format="color" />
+        <attr name="wheel_reached_width" format="dimension" />
+        <attr name="wheel_reached_has_corner_round" format="boolean" />
+
+        <attr name="wheel_unreached_color" format="color" />
+        <attr name="wheel_unreached_width" format="dimension" />
+
+        <attr name="wheel_pointer_drawable" format="integer" />
+
+        <attr name="wheel_pointer_color" format="color" />
+        <attr name="wheel_pointer_radius" format="dimension" />
+
+        <attr name="wheel_start_text" format="string" />
+        <attr name="wheel_start_text_color" format="color" />
+        <attr name="wheel_start_text_size" format="dimension" />
+
+        <attr name="wheel_end_text" format="string" />
+        <attr name="wheel_end_text_color" format="color" />
+        <attr name="wheel_end_text_size" format="dimension" />
+
+        <attr name="wheel_has_pointer_shadow" format="boolean" />
+        <attr name="wheel_has_wheel_shadow" format="boolean" />
+        <attr name="wheel_pointer_shadow_radius" format="dimension" />
+        <attr name="wheel_shadow_radius" format="dimension" />
+
+        <attr name="wheel_has_cache" format="boolean" />
+        <attr name="wheel_can_touch" format="boolean" />
+        <attr name="wheel_scroll_only_one_circle" format="boolean" />
+    </declare-styleable>
+</resources>

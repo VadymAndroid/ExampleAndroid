@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="ua.mycredit.mycredit">
+
+    <uses-sdk tools:overrideLibrary="io.card.payment" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="com.example.gcm.permission.C2D_MESSAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <application
+        android:name=".AndroidApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_my_credit_logo"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".ui.launch.SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="https" android:pathPrefix="/"
+                    android:host="mycredit.ua"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.launch.onboarding.OnboardingActivity" />
+        <activity android:name=".ui.calculator.CalculatorActivity" />
+        <activity android:name=".ui.authentication.SignInActivity" />
+        <activity
+            android:name=".ui.authentication.registration.SignUpActivity"
+            android:windowSoftInputMode="adjustResize" />
+
+        <service android:name=".services.FirebaseMessagingServiceImpl">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_logo_my_credit" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorPrimary" />
+
+        <activity android:name=".ui.profile.ProfileActivity" />
+        <activity android:name=".ui.profile.profile.faq.FaqActivity" />
+        <activity android:name=".ui.profile.profile.details.DetailsActivity" />
+        <activity android:name=".ui.profile.profile.contacts.ContactsActivity" />
+        <activity android:name=".ui.profile.cards.AddCardActivity" />
+        <activity android:name=".ui.profile.WebBankingActivity" />
+        <activity android:name=".ui.profile.repayloan.RepayLoanActivity" />
+        <activity android:name=".ui.profile.credit.AgreementActivity" />
+        <activity android:name=".ui.profile.CardsActivity" />
+        <activity android:name=".ui.profile.profile.ProlongationPreferencesActivity" />
+    </application>
+
+</manifest>

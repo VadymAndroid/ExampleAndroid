@@ -1,0 +1,843 @@
+<resources>
+    <string name="app_name">MyCredit</string>
+    <string name="my_credit">Мой\nкредит</string>
+    <string name="credit">Кредит</string>
+
+    <string name="skip">Пропустить</string>
+    <string name="finish">Завершить</string>
+    <string name="onboarding_1_header">20 мин</string>
+    <string name="onboarding_1_text">Быстрое решение\nДля Вас!</string>
+    <string name="onboarding_2_header">24/7</string>
+    <string name="onboarding_2_text">онлайн заявки на кредит\nкруглосуточно</string>
+    <string name="onboarding_3_header">0%</string>
+    <string name="onboarding_3_text">беспроцентный\nкредит</string>
+
+    <string name="sign_in">Войти</string>
+    <string name="sign_up">Регистрация</string>
+    <string name="to_sign_up">Зарегистрируйтесь</string>
+    <string name="login">Логин</string>
+    <string name="delete">Удалить</string>
+    <string name="password">Пароль</string>
+    <string name="edit_password">Изменить пароль</string>
+    <string name="select">Выбрать</string>
+    <string name="exit_confirmation">Вы действительно хотите покинуть этот экран?</string>
+    <string name="still_do_not_have_an_account">Все еще нет аккаунта? %s</string>
+    <string name="choose_sum_and_term">Выберите сумму и срок кредита</string>
+    <string name="choose_birth_day">Выберите дату рождения</string>
+    <string name="choose_passport_issued_date">Выберите дату выдачи паспорта</string>
+    <string name="specify_mobile">Ваш мобильный телефон</string>
+    <string name="you_have_already_registered">Вы уже зарегистрированы в MyCredit!</string>
+    <string name="sing_in_to_cabinet">Войти в Личный кабинет</string>
+    <string name="enter_sms_code">Введите код из СМС</string>
+    <string name="go_over">Перейти</string>
+    <string name="borrow">Занимаете:</string>
+    <string name="percent">Процент:</string>
+    <string name="give">Отдаете:</string>
+    <string name="specific_uah">%1$s грн</string>
+    <string name="specific_uah_d">%d грн</string>
+    <string name="specific_uah_f">%.0f грн</string>
+    <string name="specific_uah_f_pennies">%.2f грн</string>
+    <string name="uah">грн</string>
+    <string name="discount_pattern">Скидка - %.2f%%</string>
+    <string name="do_you_have_promocode">У Вас есть промокод?</string>
+    <string name="log_in_before_promocode">Для ввода промокода Вам необходимо войти в личный кабинет или зарегистрироваться</string>
+    <string name="complete_sign_up_before_promocode">Для ввода промокода Вам необходимо завершить регистрацию</string>
+    <string name="get_credit">Получить кредит</string>
+    <string name="login_or_get_credit">Войти / Получить кредит</string>
+    <string name="change_conditions">Изменить условия</string>
+    <string name="enter_promocode">Введите промокод</string>
+    <string name="note">Примечание</string>
+    <string name="money_restriction_note">В данный момент Вам доступно %1$d грн, данная сумма будет расти с каждым кредитом.</string>
+    <string name="days_restriction_note">Максимальное количество дней - %1$d. Вы можете продлить кредит из личного кабинета.</string>
+    <string name="display_next_time">Отображать в следующий раз?</string>
+    <string name="passport">Паспорт</string>
+    <string name="old_sample">Старого образца</string>
+    <string name="new_sample">ID-карта</string>
+    <string name="repay_loan_title">Погасить кредит</string>
+    <string name="my_credit_one_line">MyCredit</string>
+    <string name="name_not_specified">(имя не указано)</string>
+    <string name="greeting_pattern">Приветствуем, %s</string>
+    <string name="please_wait">Пожалуйста подождите</string>
+
+    <string name="viber_link">viber://pa?chatURI=mycredittest</string>
+    <string name="viber_play_market_link">https://play.google.com/store/apps/details?id=com.viber.voip</string>
+    <string name="telegram_link">https://telegram.me/MyCrerdit_bot</string>
+    <string name="facebook_link">https://www.messenger.com/t/MyCreditua</string>
+
+    <string name="you_do_not_have_credits">Пока что у вас нет кредитов.\nВозьмите кредит для открытия этого раздела.</string>
+    <string name="cancel">Отмена</string>
+    <string name="next">Далее</string>
+    <string name="confirm">Подтвердить</string>
+    <string name="loading">Загрузка…</string>
+    <string name="forgot_password">Забыли пароль?</string>
+    <string name="enter_other_number">Ввести другой номер</string>
+    <string name="resend">Отправить ещё раз</string>
+    <string name="resend_after">Отправить ещё раз (через %d сек.)</string>
+    <string name="receive_sms">Получить СМС c кодом</string>
+    <string name="password_resetting">Восстановление пароля</string>
+    <string name="minutes_left">Осталось: &lt; %1$s мин</string>
+    <string name="enter_your_data">Введите Ваши данные</string>
+    <string name="passport_data">Паспортные данные</string>
+    <string name="personal_information">Личные сведения</string>
+    <string name="finance_info">Данные о ваших доходах / расходах</string>
+    <string name="result">Итог</string>
+    <string name="scan">Сканировать</string>
+    <string name="pick_missing_scans_option">Выбрать</string>
+    <string name="main_data">Основные данные</string>
+    <string name="address">Адрес</string>
+    <string name="finance">Финансы</string>
+    <string name="addresses">Адрес проживания</string>
+    <string name="register_addresses">Адрес регистрации</string>
+    <string name="not_specified">Не указано</string>
+    <string name="choose_credit">Получить кредит</string>
+    <string name="read_contract">Ознакомиться с договором</string>
+
+    <string name="phone_number_exists">Данный номер уже зарегистрирован в нашей системе.</string>
+    <string name="email">Email</string>
+    <string name="invent_password">Придумайте пароль</string>
+    <string name="repeat_password">Повторите пароль</string>
+
+    <string name="dayCount1">%1$d день</string>
+    <string name="dayCount2_4">%1$d дня</string>
+    <string name="dayCount5_0">%1$d дней</string>
+
+    <string name="until_day_month">до %1$d %2$s</string>
+    <string name="until">до %s</string>
+    <string name="good">Хорошо</string>
+    <string name="live_in_residence">Живу по месту прописки</string>
+    <string name="address_search">Поиск адреса</string>
+    <string name="email_with_facebook">Привязать Facebook к аккаунту</string>
+    <string name="facebook_desc">Мы не публикуем записи в Facebook без разрешения. Добавьте Email через FB и <b>увеличьте вероятность получения кредита.</b></string>
+    <string name="data_process_allowed">Даю согласие на обработку моих данных телекомуникационными операторами</string>
+    <string name="get_news_from_my_credit">Получать информацию о новостях и акциях в MyCredit</string>
+    <string name="rules_agreed_clickable_fragment">правилами предоставления кредитов</string>
+
+    <string name="position">Должность</string>
+    <string name="company_name">Название компании</string>
+    <string name="activity_kind">Вид деятельности</string>
+    <string name="work_phone">Телефон компании</string>
+    <string name="work_experience">Стаж работы</string>
+    <string name="monthly_income">Месячный доход (грн)</string>
+
+    <string name="income_main_source">Источник дохода</string>
+
+    <string name="school_name">Учебное заведение</string>
+    <string name="faculty_spec">Факультет</string>
+    <string name="education_degree">Степень</string>
+    <string name="student_id">Студ. билет</string>
+
+    <string name="family_expenses">Расходы на семью</string>
+    <string name="payments_amount_on_loans">Сумма по кредитам</string>
+    <string name="loan_purpose">Цель займа</string>
+
+    <string name="dismissalReason">Причина увольнения</string>
+    <string name="group_disability">Группа инвалидности</string>
+
+    <string name="card_holder">Владелец карты</string>
+    <string name="expires_end">Срок действия</string>
+    <string name="cvv">СVV2/CVC:</string>
+
+    <string name="password_requirements">Требования к паролю</string>
+    <string name="save">Сохранить</string>
+    <string name="security_guarantee">Гарантия\nбезопасности\nданных</string>
+    <string name="marital_status">Семейное положение</string>
+    <string name="education">Образование</string>
+
+    <string name="number_pattern">№%1$d</string>
+    <string name="string_number_pattern">№%s</string>
+    <string name="fraction_pattern">%s/%s</string>
+
+
+    <string name="occupation">Занятость</string>
+    <string name="occupation_type">Тип занятости</string>
+    <string name="occupation_type_working">Работаю</string>
+    <string name="occupation_type_businessman">Предприниматель</string>
+    <string name="occupation_type_not_working">Не работаю</string>
+    <string name="occupation_type_student">Студент</string>
+    <string name="occupation_type_pensioner">Пенсионер</string>
+    <string name="occupation_type_invalid">Инвалид</string>
+    <string name="occupation_type_housewife">Домохозяйка / Домохозяин</string>
+    <string name="occupation_type_decree">Декрет</string>
+    <string name="occupation_type_temporarily_not_working">Временно не работаю</string>
+
+    <string name="amount">Сумма</string>
+    <string name="prefer_amount">Сумма выплаты на данный момент</string>
+
+    <string name="loan_creation_date">Дата выдачи</string>
+    <string name="loan_current_debt">Сумма к возврату</string>
+    <string name="loan_term">На срок</string>
+    <string name="loan_amount">Сумма кредита</string>
+    <string name="total_debt_amount">Сумма общего долга</string>
+    <string name="next_payment_amount">Сумма след. платежа</string>
+    <string name="loan_term_end">До конца срока осталось</string>
+    <string name="loan_discount">Скидка</string>
+    <string name="your_discount">Ваша скидка</string>
+    <string name="past_due">Просрочено</string>
+    <string name="overdue_for_patttern">Просрочено на %s</string>
+    <string name="if_repay_tomorrow">Если погасить завтра</string>
+    <string name="if_repay_after">Если погасить через %d дней</string>
+    <string name="next_date_payment">Дата след. платежа</string>
+    <string name="paid">Оплачено</string>
+    <string name="repay_left">Осталось погасить</string>
+
+
+    <string name="profile_my_details">Мои данные</string>
+    <string name="top_ten_questions">Топ 10 вопросов</string>
+    <string name="profile_was_successfully_updated">Профиль был успешно обновлен</string>
+    <string name="profile_app_details">Политика конфиденциальности</string>
+
+    <string name="get_web_html_file">file:///android_asset/js/index.html</string>
+    <string name="faq_web_url">https://mycredit.ua/ru/faq/</string>
+    <string name="faq_web_url_pp">https://mycredit.ua/ru/politika-konfidencialnosti/</string>
+    <string name="logout_from_cabinet">Выход из Кабинета</string>
+    <string name="warning">Внимание</string>
+    <string name="warning_leave_profile_editing">Покинув экран внесенные изменения не будут сохранены в системе</string>
+
+    <string name="credits_history">История кредитов</string>
+    <string name="profile">Профиль</string>
+    <string name="contact_data">Контактные данные</string>
+    <string name="personal_data">Личные данные</string>
+    <string name="my_cards">Мои карты</string>
+    <string name="add_card">Добавить карту</string>
+    <string name="no_cards">Список карт пуст</string>
+    <string name="how_to_verify_card">Как подтвердить карту?</string>
+    <string name="how_to_verify_card_tutorial"><![CDATA[Для подтверждения Вашей карты, на ней <font color=#000000><b>временно</b></font> будет заблокирована сумма, в размере <font color=#000000><b>1 грн.</b></font><br><br>Введите в специальное поле проверочный код, который придет в смс от Вашего банка.<br><font color=#000000><b>Не приходит смс с кодом?</b></font> Обратитесь в поддержку Вашего банка.]]></string>
+    <string name="mark_as_main">Сделать основной</string>
+    <string name="do_verify">Верифицировать</string>
+    <string name="phone_change">Изменение телефона</string>
+    <string name="new_card">Новая карта</string>
+    <string name="no_bank_sms_question">Не приходит код подтверждения?</string>
+    <string name="contact_support">Обратитесь в поддержку Вашего банка!</string>
+    <string name="card_confirmation">Подтверждение карты</string>
+    <string name="card_not_verified">Не подтверждена</string>
+    <string name="card_confirmation_tutorial">Введите проверочный код, полученный в смс от Вашего банка</string>
+
+    <string name="phone_change_support">По вопросу замены телефонного номера обращайтесь в техподдержку</string>
+    <string name="more_questions">Еще вопросы</string>
+
+    <string name="prolong_date_selection">Срок продления кредита</string>
+    <string name="final_date_selection">Выбор конечной даты кредита</string>
+    <string name="repay_interest">Оплатить проценты</string>
+
+    <string name="prolongation_brief_description">%s, вы увеличиваете срок выплаты кредита</string>
+    <string name="prolongation_detail_description">После нажатия на кнопку \"Оплатить проценты\" Ваш кредит будет продлен до %s</string>
+
+    <string name="your_current_credit">Ваш\nтекущий кредит</string>
+    <string name="your_available_amount">Ваша\nдоступная сумма</string>
+    <string name="duty_for_today">Долг на сегодня</string>
+    <string name="credit_sold">Кредит продан</string>
+    <string name="restructured">Реструктуризован</string>
+    <string name="agreement_expired">Договор истек</string>
+    <string name="agreement_was_successfully_signed">Договор был успешно подписан</string>
+    <string name="credit_closed">Кредит закрыт</string>
+
+    <string name="credit_repay">Погашение кредита</string>
+    <string name="extension_fee">Оплата продления кредита</string>
+
+
+    <string name="credit_status_name_no_credits">Неактивный</string>
+    <string name="credit_status_name_auto_processing">В обработке</string>
+    <string name="credit_status_name_waiting_for_approval">Ожидает решения</string>
+    <string name="credit_status_name_waiting_for_agreement">Одобрен</string>
+    <string name="credit_status_name_rejected">Отклонен</string>
+    <string name="credit_status_name_no_contact">Нет ответа</string>
+    <string name="credit_status_name_approved">В ожидании</string>
+    <string name="credit_status_name_disbursement_in_progress">В ожидании</string>
+    <string name="credit_status_name_pending_prolongation">В ожидании</string>
+    <string name="credit_status_name_disbursement_failed">Не выплачен</string>
+    <string name="credit_status_name_active">Активный</string>
+    <string name="credit_status_name_past_due">Просрочен</string>
+    <string name="credit_status_name_sold">Продан</string>
+    <string name="credit_status_name_closed">Погашен</string>
+
+    <string name="credit_status_brief_description_no_credits">Уважаемый (ая) %s, у вас нет кредитов</string>
+    <string name="credit_status_brief_description_auto_processing">%s, данные в обработке</string>
+    <string name="credit_status_brief_description_waiting_for_approval">Уважаемый (ая) %s, мы уже обрабатываем Вашу заявку</string>
+    <string name="credit_status_brief_description_closed">Уважаемый (ая) %s, Ваш кредит погашен</string>
+    <string name="credit_status_brief_description_no_contact">Уважаемый (ая) %s, мы не смогли дозвониться Вам</string>
+    <string name="credit_status_brief_description_reject_unprocessed_loans">%s, Ваша заявка закрыта</string>
+    <string name="credit_status_brief_description_rejected">Уважаемый (ая) %s, мы не можем выдать Вам кредит</string>
+    <string name="credit_status_brief_description_waiting_for_agreement">Уважаемый (ая) %s, Ваш кредит одобрен, подтвердите договор</string>
+    <string name="credit_status_brief_description_agreement_expired">%s, время для подписания договора истекло</string>
+    <string name="credit_status_brief_description_approved"><![CDATA[Уважаемый (ая) %s, <font color=#4F4F4F><b>ожидайте поступления денег</b></font></body>]]></string>
+    <string name="credit_status_brief_description_disbursement_in_progress">Уважаемый (ая) %s, кредит одобрен. Ожидайте деньги</string>
+    <string name="credit_status_brief_description_active">%s, у Вас есть открытый кредит</string>
+    <string name="credit_status_brief_description_disbursement_failed">%s, деньги не зачислены</string>
+    <string name="credit_status_brief_description_past_due">%s, Вы пропустили оплату кредита</string>
+    <string name="credit_status_brief_description_restructured">Уважаемый (ая) %s, Ваш долг был разбит на %s</string>
+    <string name="credit_status_brief_description_pending_prolongation">Уважаемый (ая) %s, Ваш кредит скоро будет продлен</string>
+    <string name="credit_status_brief_description_sold">%s, Ваш кредит переуступлен</string>
+
+    <string name="credit_status_detailed_description_no_credits">Для Вас доступна следующая сумма: %.0f грн. Подайте новую заявку и через 5 минут деньги у Вас!</string>
+    <string name="credit_status_detailed_description_auto_processing">Для решения по кредиту мы проводим обработку Ваших данных. Ожидайте ответ в течение нескольких минут</string>
+    <string name="credit_status_detailed_description_waiting_for_approval">В течении 15 минут мы Вам перезвоним или пришлем SMS-сообщение с ответом по заявке. Пожалуйста, будьте на связи</string>
+    <string name="credit_status_detailed_description_closed">Спасибо, что выбрали наш сервис. Помогите нам стать лучше, оставьте о нас отзыв в Facebook или на Google карте</string>
+    <string name="credit_status_detailed_description_rejected">Приносим извинения. К сожалению, сейчас мы вынуждены отказать Вам в кредите. Но уже %s Вы сможете подать заявку повторно</string>
+    <string name="credit_status_detailed_description_no_contact">Для уточнения деталей  по Вашей заявке нам необходимо связаться с Вами. Пожалуйста, перезвоните нам или напишите в онлайн-чат</string>
+    <string name="credit_status_detailed_description_reject_unprocessed_loans">Ваша заявка была аннулирована. Подайте новую заявку и через 5 минут деньги у Вас!</string>
+    <string name="credit_status_detailed_description_waiting_for_agreement">Уже через 1 минуту деньги будут зачислены на Вашу карту! Пожалуйста, ознакомьтесь с условиями кредитного договора и подтвердите его</string>
+    <string name="credit_status_detailed_description_agreement_expired">Вам был одобрен кредит, но, к сожалению, Вы не подтвердили договор. Вашу заявку мы аннулировали, но Вы можете подать новую, и уже через 5 минут деньги будут на Вашей карте!</string>
+    <string name="credit_status_detailed_description_approved">Мы отправили деньги на Вашу карту. Если в течение 10 минут Вы не получите деньги, пожалуйста сообщите нам об этом по телефону %s или в напишите в онлайн-чат</string>
+    <string name="credit_status_detailed_description_disbursement_in_progress">Ожидайте деньги. Если в течение 10 минут Вы не получите деньги, пожалуйста сообщите нам об этом по телефону %s или в напишите в онлайн-чат</string>
+    <string name="credit_status_detailed_description_active">У Вас открыт кредит в нашем сервисе. Напоминаем, что Вы всегда можете погасить его раньше срока или воспользоваться услугой продления</string>
+    <string name="credit_status_detailed_description_disbursement_failed">Мы не можем отправить Вам деньги из-за проблем с Вашей банковской картой. Пожалуйста, обратитесь в свой банк или свяжитесь с нами по телефону: %s</string>
+    <string name="credit_status_detailed_description_past_due">Через %s Ваш договор будет передан коллекторской компании. Вам необходимо срочно погасить кредит. Вы также можете продлить его или оплатить долг частями</string>
+    <string name="credit_status_detailed_description_restructured">Вы подключили услугу реструктуризации, и мы приостановили начисление процентов. Пожалуйста, следуйте графику для оплаты во избежание штрафов</string>
+    <string name="credit_status_detailed_description_pending_prolongation">Вы оставили запрос на продление кредита и внесли оплату. Ваш кредит будет продлен автоматически, как только деньги поступят на наш счет. Это может занять до 24 часов. Пожалуйста, подождите</string>
+    <string name="credit_status_detailed_description_sold"><![CDATA[Вы <font color=#4F4F4F><b>длительное время</b></font> не гасили кредит и, согласно пункту 10.5 нашего договора мы вынуждены переуступить Ваш долг коллекторской компании. Сервис МyCredit больше не имеет отношения к Вашей задолженности]]></string>
+    <string name="credit_status_detailed_description_sold_contacts">Контакты коллекторского агенства - %s</string>
+
+    <string name="phone_support">0 800 214 111</string>
+    <string name="phone_support_lifecell">073 369 41 11</string>
+    <string name="phone_support_kyivstar">067 369 41 11</string>
+    <string name="phone_support_vodafone">050 369 41 11</string>
+    <string name="email_collectors">E-mail: info@dgfinance.com.ua.</string>
+    <string name="phone_collectors">+38 (044) 369 33 47</string>
+
+    <string name="before_pattern">до %s</string>
+    <string name="arc_credit_before_pattern">@string/before_pattern</string>
+
+    <string name="zero_percent">0%</string>
+    <string name="next_credit_amount_pattern">Следующая сумма - %d грн</string>
+    <string name="prev_credit_amount_pattern">Вы брали - %d грн</string>
+    <string name="days_left_pattern">Осталось %d дней</string>
+    <string name="current_credit">Текущий кредит - %d грн</string>
+    <string name="percentages_pattern">%d%%</string>
+    <string name="minutes_pattern">%d мин</string>
+    <string name="chance_to_get_money">Вероятность получения денег %d%%</string>
+
+    <string name="credit_status">Статус кредита</string>
+
+    <string name="ibox_step_banks">В разделе \“Банки и страхование\” выбрать \“MyCredit\”. Вы также можете воспользоваться быстрым поиском по названию.</string>
+    <string name="ibox_step_info">В окне ввода введите данные по Вашему мобильному телефону и сумме платежа.</string>
+    <string name="ibox_description">Чтобы оплатить кредит через терминал самообслуживания %s можно пройдя несколько этапов:</string>
+    <string name="ibox_name">iBox</string>
+    <string name="ibox_web_url">https://pay.ibox.ua/ru/map</string>
+
+    <string name="ibox_payment_description"><![CDATA[
+            Чтобы оплатить кредит через терминал самообслуживания %s можно пройдя несколько этапов:
+            <p><font color=#09AC81>&#149;</font> В разделе \“Банки и страхование\” выбрать \“MyCredit\”. Вы также можете воспользоваться быстрым поиском по названию</p>
+            <p><font color=#09AC81>&#149;</font> В окне ввода введите данные по Вашему мобильному телефону и сумме платежа</p>
+    ]]></string>
+
+    <string name="privat_payment_description">
+        <![CDATA[
+        <p>Чтобы оплатить/продлить кредит наличными в терминалах самообслуживания ПриватБанк:</p>
+        <p>1) Выберите раздел &ldquo;Банковские операции&rdquo;, далее компанию &ldquo;MyCredit&rdquo; определите вид операции &laquo;Погашение кредита&raquo; или &laquo;Продление действия кредита&raquo;</p>
+        <p>2) Введите номер мобильного телефона, который Вы используете для входа в личный кабинет MyCredit</p>
+        <p>3) Внесите оплату</p>
+        <p>После зачисления оплаты на расчетный счет MyCredit Ваш кредит будет закрыт/продлен и на Ваш мобильный номер телефона поступит сообщение об успешном продлении или погашении кредита.</p>
+        Реквизиты для быстрого поиска MyCredit в терминалах самообслуживания ПриватБанк:
+        ]]>
+    </string>
+    <string name="privat_requisites">ООО «1Безопасное Агенство Необходимых Кредитов»
+Код ЕГРПОУ 39861924\n
+Р/с № 26504052600258 в ПАО КБ "ПРИВАТБАНК"\n
+МФО 320649
+    </string>
+    <!--RepayLoan-->
+    <string-array name="repay_loan_tabs">
+        <item>Карта</item>
+        <item>Банк</item>
+        <item>Терминал</item>
+    </string-array>
+
+    <string-array name="repay_loan_simple_state">
+        <item>Погасить</item>
+        <item>Продлить</item>
+    </string-array>
+
+    <string name="from">от</string>
+    <string name="sum_of">500 грн</string>
+
+    <string name="successful_download_addition_agreement">Условия по дополнительному договору были успешно загружены в папку Downloads</string>
+
+    <string name="lorem_ipsum_short">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</string>
+
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+        esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
+
+    <!--Alerts-->
+    <string name="alert_not_enough_information">Вы указали не всю информацию, необходимую для полноценной работы в системе. Заполните недостающие поля в соответствующем разделе %s</string>
+    <string name="alert_no_verified_card">Данные основной карты не указаны или она не верифицированна. Введите данные по карте, на которую мы можем отправить Вам деньги после подписания договора. Заявка без привязки карты рассмотрена не будет! Подтвердите карту в разделе %s</string>
+
+    <!--Messages-->
+    <string name="message_password_changed_successfully">Пароль успешно изменён</string>
+    <string name="message_delete_card_confirmation">Вы действительно хотите удалить эту карту?</string>
+    <string name="message_card_added_successfully">Карта успешно добавлена</string>
+    <string name="message_card_verification_redirect">Ваша карта должна появится в списке карт. Некоторым банкам требуется несколько часов для проверки. Если отметка \"не подтверждена\" не пропадает попробуйте подождать некоторое время или ввести данные карты повторно</string>
+    <string name="message_payment_completed">Был произведен возврат средств по кредиту. Некоторым банкам требуется несколько часов для выполнения платежа. Если кредит не обновил свой статус в течении длительного времени, срочно обратитесь в тех. поддержку вашего банка</string>
+    <string name="message_agreement_accepting">Вы прочитали договор и соглашаетесь с условиями выдачи кредита</string>
+    <string name="message_prolong_interests_repayment_required">Для пролонгации необходимо погасить проценты по кредиту. Если Вы уже произвели оплату и по прошествию длительного времени кнопка \"%s\" не появилась, то cрочно обратитесь в тех. поддержку вашего банка</string>
+    <string name="message_credit_preferences_confirmation">Вы действительно хотите подать заявку на кредит в размере %d грн на %s?</string>
+    <string name="message_prolongation_amount_is_immutable">Сумма выплаты по пролонгации фиксированна</string>
+    <string name="message_restructuring_step_amount_is_immutable">Сумма выплаты по шагу реструктуризации фиксирована</string>
+
+    <!--Hints-->
+    <string name="hint_select">Выберите</string>
+    <string name="hint_input">Введите</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_region">Область</string>
+    <string name="hint_city">Город</string>
+    <string name="hint_street">Улица</string>
+    <string name="hint_house">Дом</string>
+    <string name="hint_housing">Корпус</string>
+    <string name="hint_apartment">Квартира</string>
+    <string name="hint_password">Пароль</string>
+    <string name="hint_current_password">Текущий пароль</string>
+    <string name="hint_new_password">Новый пароль</string>
+    <string name="hint_confirm_password">Подтвердите пароль</string>
+    <string name="hint_surname">Фамилия</string>
+    <string name="hint_test_surname">Иванов</string>
+    <string name="hint_name">Имя</string>
+    <string name="hint_test_name">Иван</string>
+    <string name="hint_patronymic">Отчество</string>
+    <string name="hint_test_patronymic">Иванович</string>
+    <string name="hint_birth_day">Дата рождения</string>
+    <string name="hint_tin">ИНН</string>
+    <string name="hint_passport_series">Серия</string>
+    <string name="hint_passport_number">Номер</string>
+    <string name="hint_passport_given_by">Кем выдан?</string>
+    <string name="hint_passport_issue_date">Дата выдачи</string>
+    <string name="hint_expiration_date">Окончание срока действия</string>
+    <string name="hint_id_card_record">Запись №</string>
+    <string name="hint_id_card_doc_number">Номер документа</string>
+    <string name="hint_your_phone_number">Ваш мобильный номер</string>
+    <string name="hint_your_phone_number_login">Ваш мобильный телефон (логин)</string>
+    <string name="hint_your_email">Ваш email</string>
+    <string name="hint_card_holder">IVANOV IVAN</string>
+    <string name="hint_promo_code">Промокод</string>
+    <string name="hint_sms_code">Код из смс</string>
+    <string name="hint_student_id">Студ. билет</string>
+
+    <!--Error Messages-->
+    <string name="error">Ошибка</string>
+    <string name="error_list_update">Не удалось обновить список</string>
+    <string name="error_unknown">Неизвестная ошибка</string>
+    <string name="error_browser">Не удалось открыть ссылку из-за отсутствия Браузера.</string>
+    <string name="error_connect">Не удалось получить доступ к серверу. Проверьте интернет соединение и повторите попытку</string>
+    <string name="error_no_internet">Отсутствует интернет соединение</string>
+    <string name="error_field_required">Обязательное поле</string>
+    <string name="error_field_required_short">Обяз. поле</string>
+    <string name="error_incorrect_number">Некорректный номер</string>
+    <string name="error_incorrect_email">Некорректный email</string>
+    <string name="error_invalid_password">Неправильный пароль</string>
+    <string name="error_passwords_do_not_match">Пароли не совпадают</string>
+    <string name="error_selecting_location">Произошла ошибка при выборе локации</string>
+    <string name="error_tin_length">ИНН должен состоять из 10-ти цифр</string>
+    <string name="error_tin_exists">Данные ИНН уже зарегистрирован в нашей БД</string>
+    <string name="error_wrong_passport_serial">Невер. формат</string>
+    <string name="error_wrong_passport_number_length">Номер паспорта состоит из 6 цифр</string>
+    <string name="error_wrong_id_card_record">Укажите корректный номер записи\n(напр. 19910824–00026)</string>
+    <string name="error_wrong_id_card_doc_number">Номер документа содержит 9 цифр</string>
+    <string name="error_unable_pick_images">Не удалось получить доступ к изображениям</string>
+    <string name="error_old_passport_min_count">Необходимо минимум три избражения для паспортов старого образца</string>
+    <string name="error_new_passport_min_count">Необходимо два избражения для паспортов нового образца</string>
+    <string name="error_images_max_count">Достигнуто максимальное число фото</string>
+    <string name="error_wrong_scans_count">Число сканов паспорта меньше необходимого</string>
+    <string name="error_cyrillic_required">Допустимы только кирилические символы</string>
+    <string name="error_cyrillic_or_number_required">Допустимы только кирилические символы или цифры</string>
+    <string name="error_wrong_char">Недопустимый символ</string>
+    <string name="error_wrong_tin_birth_day">Несоответствие дате рождения</string>
+    <string name="error_wrong_tin_check_sum">Неверная контрольная сумма</string>
+    <string name="scan_was_canceled">Сканирование было отменено.</string>
+    <string name="empty_list">Ничего нет</string>
+    <string name="error_profile_data">Внесите данные</string>
+    <string name="error_wrong_old_password">Не удалось изменить пароль. Текущий пароль неправильный</string>
+    <string name="error_wrong_promo_code">Неправильный или устаревший промокод. Попробовать ввести ещё раз?</string>
+    <string name="first_loan_promo_code">Комиссия за первый кредит - 0,01%. Воспользуйтесь промокодом при оформлении второго кредита</string>
+    <string name="error_download_agreement">Произошла ошибка при загрузке Договора. Повторите позже или обратитесь в тех. поддержку</string>
+    <string name="error_card_in_progress">Верификация карты в процессе обработки. Ожидайте</string>
+    <string name="error_card_identification">Ошибка верификация карты. Попробуйте ввести данные карты повторно или использовать другую</string>
+    <string name="error_wrong_prolongation_date">Не удалось оформить пролонгацию на указанную дату. Попробуйте выберать другую</string>
+    <string name="error_personal_data_uneditable">На данный момент поля недоступны для редактирования, обратитесь пожалуйста в службу поддержки:</string>
+    <string name="error_wrong_sms_code">Код должен состоять из 6 цифр</string>
+    <string name="error_wrong_student_id_number">Укажите серию и номер (напр. ХА12345678)</string>
+    <string name="error_amount_exceeded">Сумма превышает сумму полного погашения</string>
+    <string name="error_wrong_amount">Укажите сумму в корректном формате (напр. 50.25)</string>
+    <string name="error_wrong_login_or_password">Неправильный логин или пароль</string>
+    <string name="error_sms_attempts">Превышено число попыток получения кода. Попробуйте повторить попытку через 10 минут</string>
+    <string name="error_unable_to_mark_as_main">Вы можете изменить основную карту только после погашения кредита</string>
+    <string name="error_wrong_income">Сумма дохода должна быть больше нуля</string>
+    <string name="error_wrong_phone">Короткий номер</string>
+
+    <string name="you_save_uah">Вы экономите\n50 грн</string>
+    <string name="sum_uah">Сумма\n100 грн</string>
+    <string name="extend">Продлить</string>
+    <string name="minus_discount">-%d%%</string>
+
+    <string name="agreement">Договор</string>
+    <string name="accept_agreement">Подтвердить договор</string>
+    <string name="sign">Подписать</string>
+
+    <!-- None Translatable -->
+    <string name="facebook_app_id" translatable="false">188505518428632</string>
+    <string name="fb_login_protocol_scheme" translatable="false">fb188505518428632</string>
+
+    <string name="symbol_plus" translatable="false">+</string>
+    <string name="symbol_equals" translatable="false">=</string>
+    <string name="hint_number" translatable="false">XXXXXXXXXXXXXXX</string>
+    <string name="hint_card" translatable="false">****************</string>
+    <string name="hint_card_expiration_date" translatable="false">MMYY</string>
+    <string name="hint_cvv" translatable="false">–––</string>
+
+    <string name="_1" translatable="false">1</string>
+    <string name="_2" translatable="false">2</string>
+    <string name="_3" translatable="false">3</string>
+
+    <string name="empty" translatable="false" />
+    <string name="agree_with_terms_of_contract_plain">Согласен с дополнительными условиями по %s</string>
+    <string name="agree_with_terms_of_contract_clickable">договору</string>
+
+    <string name="choose_payout_method">Выберите способ оплаты</string>
+    <string name="company">Компания</string>
+    <string name="number_of_apply">Номер заявки</string>
+    <string name="payout_appointment">Назначение платежа</string>
+    <string name="number_date_pattern">№ %s от %s</string>
+    <string name="sum_to_pay">Сумма к возврату</string>
+    <string name="full_repayment_amount">Сумма полного \nпогашения - %s</string>
+    <string name="card">Карта</string>
+    <string name="pay_with_another_card">Оплатить другой картой</string>
+    <string name="prolong">Продлить</string>
+    <string name="prolongation_payment_in_progress">Ожидание оплаты по пролонгации</string>
+    <string name="select_prolongation_date">Выбрать дату пролонгации</string>
+    <string name="prolongation_payment">Оплата пролонгации</string>
+    <string name="go_to_repay">К экрану оплаты</string>
+    <string name="restructure">Реструктуризировать</string>
+    <string name="repay">Погасить</string>
+    <string name="repay_restructured_part">Плановая оплата</string>
+    <string name="repay_restructuring">Оплата рестуктризации кредита</string>
+    <string name="repay_ahead_time">Погасить досрочно</string>
+    <string name="repay_ahead_time_pattern">Погасить досрочно %s</string>
+    <string name="repay_today">Погасить сегодня</string>
+    <string name="repay_today_pattern">Погасить сегодня %s</string>
+    <string name="pay">Оплатить</string>
+    <string name="main_card_not_verified">Данные основной карты не указаны или она не подтверждена</string>
+    <string name="go_to_card_list">Перейти к списку моих карт</string>
+
+    <!--BankFragment-->
+    <string name="repayment_less_than_pattern">Любая до %.2f грн</string>
+    <string name="sum">Сумма</string>
+    <string name="my_credit_bank_account">№26504052600258</string>
+    <string name="account">Счет</string>
+    <string name="my_credit_mfo">320649</string>
+    <string name="mfo">МФО</string>
+    <string name="privat_bank">ПАО КБ \'ПриватБанк\'</string>
+    <string name="bank">Банк</string>
+    <string name="my_credit_egrpou">39861924</string>
+    <string name="ergpou">ЕРГПОУ</string>
+    <string name="my_credit_ooo_name">OOO “1 Безопасное Агенство \nНеобходимых кредитов”</string>
+    <string name="receiver">Получатель</string>
+    <string name="bank_fragment_top_text">Просто распечатайте или запишите данные платежа и обратитесь в кассу любого из вышеуказанных банков</string>
+    <string name="bank_offices_info">Погасить кредит полностью или частично  \nможно в отделениях следующих банков:</string>
+
+    <!--Bank-->
+    <string name="privatBank">ПриватБанк</string>
+    <string name="prominvest">Проминвестбанк</string>
+    <string name="bank_aval">Райффайзен банк Аваль</string>
+    <string name="ukr_bank">Укрэкзимбанк</string>
+    <string name="sberbank">Сбербанк России</string>
+    <string name="alfa_bank">Альфа-банк</string>
+    <string name="oshad_bank">Ощадбанк</string>
+    <string name="ukr_soc_bank">Укрсоцбанк</string>
+    <string name="vtb_bank">ВТБ банк</string>
+
+    <!-- Arrays -->
+
+    <string-array name="details_tabs_personal">
+        <item>Личные</item>
+        <item>Основные</item>
+        <item>Паспорт</item>
+        <item>Адрес</item>
+        <item>Общие</item>
+    </string-array>
+
+    <string-array name="details_tabs_occupation">
+        <item>Занятость</item>
+        <item>Финансы</item>
+    </string-array>
+
+    <string-array name="sing_up_progress">
+        <item>0%</item>
+        <item>20%</item>
+        <item>40%</item>
+        <item>60%</item>
+        <item>80%</item>
+        <item>99%</item>
+    </string-array>
+
+    <string-array name="months_array_date">
+        <item>января</item>
+        <item>февраля</item>
+        <item>марта</item>
+        <item>апреля</item>
+        <item>мая</item>
+        <item>июня</item>
+        <item>июля</item>
+        <item>августа</item>
+        <item>сентября</item>
+        <item>октября</item>
+        <item>ноября</item>
+        <item>декабря</item>
+    </string-array>
+
+    <string-array name="occupation_types">
+        <item>Работаю</item>
+        <item>Предприниматель</item>
+        <item>Не работаю</item>
+        <item>Студент</item>
+        <item>Пенсионер</item>
+        <item>Инвалид</item>
+        <item>Домохозяйка / Домохозяин</item>
+        <item>Декрет</item>
+        <item>Временно не работаю</item>
+    </string-array>
+
+    <string-array name="specialization">
+        <item>Нет данных</item>
+        <item>Военное дело</item>
+        <item>Гуманитарные науки</item>
+        <item>Медицина</item>
+        <item>Пищевая и легкая промышленность</item>
+        <item>Право</item>
+        <item>Природоведческие науки</item>
+        <item>Строительство</item>
+        <item>Технические науки</item>
+        <item>Точные науки</item>
+        <item>Экономика и предпринимательство</item>
+        <item>Другой</item>
+    </string-array>
+
+    <string-array name="maritalStatuses">
+        <item>Женат / замужем</item>
+        <item>Холост / не замужем</item>
+        <item>Разведен / разведена</item>
+        <item>Вдовец / вдова</item>
+        <item>Гражданский брак</item>
+    </string-array>
+
+    <string-array name="educations">
+        <item>Неоконченное среднее</item>
+        <item>Среднее</item>
+        <item>Неоконченное высшее</item>
+        <item>Высшее</item>
+        <item>Несколько высших</item>
+        <item>Научная степень</item>
+    </string-array>
+
+    <string-array name="dismissalReasons">
+        <item>Нет данных</item>
+        <item>Сокращение</item>
+        <item>Низкая зарплата</item>
+        <item>Не выплачивали зарплату</item>
+        <item>Не нравилась работа</item>
+        <item>Не подходили условия работы</item>
+        <item>Далеко добираться</item>
+        <item>Уволили за нарушение дисциплины</item>
+    </string-array>
+
+    <string-array name="positions">
+        <item>Заместитель руководителя</item>
+        <item>Другая руководящая должность</item>
+        <item>Специалист</item>
+        <item>Рабочий</item>
+        <item>Вспомогательный персонал</item>
+        <item>Руководитель организации</item>
+    </string-array>
+
+    <string-array name="familyExpenses">
+        <item>&lt; 1000</item>
+        <item>1001 – 2500</item>
+        <item>2501 – 5000</item>
+        <item>&gt; 5000</item>
+    </string-array>
+
+    <string-array name="paymentsAmountOnLoans">
+        <item>0</item>
+        <item>1 – 1000</item>
+        <item>1001 – 2000</item>
+        <item>&gt; 2000</item>
+    </string-array>
+
+    <string-array name="loanPurposes">
+        <item>Погасить другой займ</item>
+        <item>Обслуживание автомобиля</item>
+        <item>Путешествие/отдых</item>
+        <item>Развлечение/веселье</item>
+        <item>Просто не хватает денег</item>
+        <item>Семейные/детские затраты</item>
+        <item>Не хочу отвечать</item>
+        <item>Лечение</item>
+        <item>Ремонт жилья</item>
+        <item>Другое</item>
+    </string-array>
+
+
+    <string-array name="income_main_sources">
+
+        <item>Стипендия</item>
+        <item>Пенсия</item>
+        <item>Социальная помощь</item>
+        <item>Пособие на ребенка</item>
+        <item>Пособие по безработице</item>
+        <item>Помощь от родственников</item>
+        <item>Зарплата</item>
+        <item>Нет дохода</item>
+        <item>Доходы от аренды / депозита</item>
+        <item>Доход от предпринимательской деятельности</item>
+
+    </string-array>
+
+    <string-array name="activity_kinds">
+
+        <item>Военный по контракту</item>
+        <item>Государственная служба</item>
+        <item>Информационный системы и технологии</item>
+        <item>Культура и искусство</item>
+        <item>Медицина</item>
+        <item>Наука и образование</item>
+        <item>Производственная деятельность</item>
+        <item>Прокуратура, суд и правоохранительные органы</item>
+        <item>Сервис и услуги</item>
+        <item>Строительство и недвижимость</item>
+        <item>Торговля</item>
+        <item>Транспорт</item>
+        <item>Финансы и бухгалтерия</item>
+        <item>Юриспруденция</item>
+
+    </string-array>
+
+    <string-array name="education_degrees">
+        <item>Младший специалист</item>
+        <item>Бакалавр</item>
+        <item>Специалист</item>
+        <item>Магистр</item>
+    </string-array>
+
+
+    <plurals name="days">
+        <item quantity="zero">%d дней</item>
+        <item quantity="one">%d день</item>
+        <item quantity="few">%d дня</item>
+        <item quantity="many">%d дней</item>
+        <item quantity="other">%d дней</item>
+    </plurals>
+
+    <plurals name="payments">
+        <item quantity="one">%d платеж</item>
+        <item quantity="few">%d платежа</item>
+        <item quantity="other">%d платежей</item>
+    </plurals>
+
+    <plurals name="prolong_days">
+        <item quantity="one">Продлить на %d день</item>
+        <item quantity="few">Продлить на %d дня</item>
+        <item quantity="other">Продлить на %d дней</item>
+    </plurals>
+
+    <plurals name="break_payments">
+        <item quantity="one">Разбить платеж на %d часть</item>
+        <item quantity="few">Разбить платеж на %d части</item>
+        <item quantity="other">Разбить платеж на %d частей</item>
+    </plurals>
+
+    <plurals name="smashed_for_payments">
+        <item quantity="one">Разбит на %d платеж по</item>
+        <item quantity="few">Разбит на %d платежа по</item>
+        <item quantity="other">Разбит на %d платежей по</item>
+    </plurals>
+
+    <string-array name="password_requirements">
+
+        <item>6 и более символов</item>
+        <item>Прописные и строчные буквы</item>
+        <item>Хотя бы одна цифра</item>
+
+    </string-array>
+
+    <string-array name="faq_questions">
+        <item>Что такое MyCredit?</item>
+        <item>Как подать заявку на кредит в приложении MyCredit?</item>
+        <item>Как привязать банковскую карту?</item>
+        <item>Мне не приходит SMS с кодом подтверждения. Что мне делать?</item>
+        <item>Какая максимальная сумма и срок займа?</item>
+        <item>Рассматриваются ли заявки в выходные? А ночью?</item>
+        <item>Как продлить кредит?</item>
+        <item>Где я могу оплатить кредит? Возможно ли погашать кредит частями в MyCredit?</item>
+        <item>Почему мне отказали? Когда можно подать заявку еще раз?</item>
+        <item>Сколько времени рассматривается заявка на кредит и как узнать результат?</item>
+    </string-array>
+
+    <string-array name="faq_answers">
+        <item>MyCredit — современный функциональный сервис, который объединил возможности современных интернет-технологий и банковских организаций и сделал возможным оформление кредитов в режиме онлайн. Мы предлагаем воспользоваться новым видом удобных, простых и надежных финансовых услуг. Мы стараемся сделать получение займа простым для каждого, при этом придерживаясь нашего основного принципа — помощь должна прийти моментально, как только она потребовалась. С нами у вас не будет никаких неожиданных или скрытых платежей. Воспользоваться услугами сервиса MyCredit — оптимальный выход из ситуации, когда вам срочно понадобились деньги.</item>
+        <item><![CDATA[<p>Для удобства наших клиентов мы создали мобильное приложение, которое значительно упростило процесс выдачи кредитов. Выберите сумму и срок вашего кредита на специальном кредитном калькуляторе, перемещая ползунки калькулятора вправо и влево, по-окружности, пока не высветиться необходимая вам сумма и период, на который вы хотите взять кредит.</p>
+<p>Используя наш сервис впервые нажав кнопку «Получить деньги», вы переходите в заполнение заявки на кредит, в которой необходимо заполнить все поля максимально корректно и внимательно, ваши личные данные будут защищены по максимальным стандартам международной сертификации безопасности PCI DSS, Если кредит - повторный, никакие данные заполнять не придется, но в случае их изменения вы можете внести коррективы в разделе “ПРОФИЛЬ” - “МОИ ДАННЫЕ”.</p>
+<p>В дальнейшем сразу при открытии приложения Вы будете попадать в личный кабинет приложения, в котором будет отображаться вся информация о вашем кредите, о сроках и начисленных процентах, а также, возможность проводить все необходимые действия с вашим кредитом, например, оформить новую заявку, продлить или погасить ваш кредит, ознакомится с условиями бонусной программы лояльности (в разработке) - отобразятся скидка и новая доступная сумма кредита.</p>
+<p>Указывайте максимально полную и правдивую информацию. Чем точнее данные, тем больше вероятность получить большую сумму. Для максимального удобства и выдачи средств рекомендуем вам сразу привязать банковскую карту, это вы также сможете сделать в соответствующем разделе мобильного приложения.</p>
+]]></item>
+        <item><![CDATA[<p>Привязать банковскую карту вы сможете в специальном разделе мобильного приложения. Введите номер, срок действия вашей карты, а также Имя и Фамилию указанные в поле “Cardholder Name”. Затем введите код cvv2 указанный на тыльной стороне вашей банковский карты. Для окончательной верификации и привязки карты сервис ВРЕМЕННО заблокирует на ней примерно одну гривну.</p>
+<p>После этого, на указанный номер телефона вам придет SMS с кодом подтверждения. Его необходимо ввести его в специальное проверочное поле которое находится под изображением карты. Эта процедура дает возможность убедиться, что карта рабочая и находится в руках собственника.</p>
+<p><b>Важно!</b>
+Заблокированную сумму в течении суток мы обязательно вернем на ваш счет. Этап привязки банковской карты является гарантом того, что заявку подаете именно вы, а не злоумышленник завладевший вашими данными. Указывайте данные именно своей карты, которая зарегистрирована на ваше имя.</p>
+<p><b>Внимание!</b> Не стоит вводить номер карты родных или знакомых, так как различные данные в анкете могут вызвать подозрения о мошеннических операциях, банковская карта проверяется через международную платежную систему WayForPay.  Эта система гарантирует, что данные по вашей карте полностью защищены стандартом информационной безопасности платёжных карт PCI DSS v.3.0.</p>
+Мы не сохраняем данные вашей банковской карты и не передаем их третьим лицам
+]]></item>
+        <item><![CDATA[<p>Если вам не пришло SMS, проверьте правильность номера телефона и нажмите кнопку «повторить SMS». Причины, по которым вы не получили уведомление:</p>
+
+<p>&#149; На вашем телефоне вирус или используется контрафактная программа для SMS-сообщений, проверьте устройство на наличие вирусов и пользуйтесь только официальными приложениями.</p>
+<p>&#149; В момент отправки сообщения имели место перебои со связью, если это так - просто подождите некоторое время или перезагрузите устройство</p>
+<p>&#149; Возможно сообщение получено, но телефон его не отобразил, а сохранил в отдельной папке;
+В случае если все вышеперечисленное не помогло – попробуйте переставить sim-карту в другое устройство.</p>
+
+]]></item>
+        <item><![CDATA[<p>Если вы являетесь новым клиентом MyCredit, то есть берете кредит в нашем сервисе впервые, максимальная сумма вашего займа не может превышать 4 000 гривен. Каждый последующий кредит доступная сумма увеличивается. При постоянном пользовании услугами сервиса и соблюдении сроков выплат сумма займа может достигать 10 000 гривен.</p>
+<p>Срок кредита - можно увеличивать, благодаря новой выгодной, программе пролонгации - продлить кредит можно бесплатно, неограниченное количество раз, на тот же срок, на который он оформлялся. Для этого необходимо оплатить проценты по вашему активному кредиту за период пользования. Сумма оплаты определяется индивидуально, исходя из суммы первоначального займа и периода пользования средствами. Узнать точную сумму вы сможете в личном кабинете пользователя. Подключить услугу можно в мобильном приложении, нажав на кнопку “Продлить кредит”.</p>]]></item>
+        <item><![CDATA[Уважаемый клиент, MyCredit работает 24 часа в сутки без выходных, соответственно подать заявку на кредит и получить средства в MyCredit вы можете в любое время круглосуточно. Попробуйте сделать это прямо сейчас!
+]]></item>
+        <item><![CDATA[<p>Мы разработали для клиентов новые выгодные условия пролонгации - продлить кредит можно бесплатно, на тот же срок, на который он оформлялся.</p>
+<p>Для этого необходимо оплатить проценты по вашему активному кредиту за период пользования.</p>
+<p>Сумма оплаты определяется индивидуально, исходя из суммы первоначального займа и периода пользования средствами. Узнать точную сумму, а также подключить услугу пролонгации, вы сможете на активном экране вашего мобильного приложения или в личном кабинете пользователя MyCredit.</p>
+<p>Пользоваться услугой пролонгации вы можете неограниченное количество раз. На данный момент мы разрабатываем дополнительные условия продления - с более низкими процентными ставками, но необходимостью оплаты наперед.</p>
+]]></item>
+        <item><![CDATA[<p>Благодаря быстрой и эффективной работе сервиса Mycredit, вы получаете максимальное количество простых способов погашения, взятого вами ранее кредита:</p>
+<p>&#149; В мобильном приложении, нажав на кнопку “Погасить кредит”</p>
+<p>&#149; В терминалах Приватбанка или Easy Pay, нажав на соответствующую иконки</p>
+<p>&#149; В кассе банка, указывая личные данные кассиру, показываете паспорт и вносите деньги наличным платежом.</p>
+
+<p>Узнать остаток задолженности вы можете зайдя в личный кабинет и в графе ожидаемой оплаты вы сможете увидеть сумму собственного долга, также позвонить по телефону 0 800 214 111 (бесплатно по всей территории Украины), и узнать долг дистанционно без выхода в интернет у менеджера.</p>
+<p>В MyCredit можно погашать кредит любыми удобными частями. Главное – оплатить займ полностью до указанной в договоре даты погашения. В случае частичного погашения, проценты будут насчитываться только на размер непогашенной части кредита.</p>
+]]></item>
+        <item><![CDATA[<p>Причину отказа верификаторы не разглашают, но, согласно правилам MyCredit, мы не сможем выдать вам кредит, если:</p>
+
+<p>
+<br />- Вы не являетесь гражданином Украины
+<br />- Вам меньше 18 лет или больше 75 лет
+<br />- Вы не выплатили предыдущий кредит в MyCredit
+<br />- Вы значитесь как должник в одном из реестров должников (Укранское Бюро Кредитных историй)
+<br />- При своей регистрации вы указали ошибочные (ложные) данные
+<br />- Вы попытались привязать банковскою карту, владельцем которой вы не являетесь
+</p>
+
+<p>В случае получения отказа повторную заявку на кредит можно подать через 20 дней.
+Перед подачей заявки мы рекомендуем перепроверить правильность заполнения анкеты, а также убедится в том, что у вас нет активных просроченных кредитов, часто отказ обусловлен именно плохой кредитной историей заемщика.</p>
+]]></item>
+        <item><![CDATA[Срок рассмотрения заявки составляет 10–15 минут для первого кредита и 5 минут для последующих. Поэтому последующие кредиты брать очень удобно, система MyСredit запоминает все данные, введенные вами, и их уже не потребуется вводить повторно. Достаточно войти в приложение и просто выбрать сумму и срок кредита, далее все заполненные данные анализируются кредитным алгоритмом в автоматическом режиме. После рассмотрения заявки и принятия решения MyСredit, вы получите Push уведомление на телефон с установленным приложением, SMS на ваш номер мобильного телефона и уведомление на адрес электронной почты, указанный в заявке. Если заявка одобрена - средства на вашу карту будут перечислены мгновенно. Проверьте это прямо сейчас!]]></item>
+    </string-array>
+
+    <string-array name="banks">
+        <item>ПриватБанк</item>
+        <item>Проминвестбанк</item>
+        <item>Райффайзен банк Аваль</item>
+        <item>Укрэкзим банк</item>
+        <item>Сбербанк России</item>
+        <item>Альфа-банк</item>
+        <item>Ощадбанк</item>
+        <item>Укрсоцбанк</item>
+        <item>ВТБ Банк</item>
+    </string-array>
+
+</resources>

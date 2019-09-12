@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+
+        <import type="ua.mycredit.mycredit.ui.profile.cards.CardsViewModel.AdapterImpl.CardViewHolder" />
+
+        <import type="ua.mycredit.mycredit.ui.profile.cards.CardsViewModel.Mode" />
+
+        <import type="ua.mycredit.mycredit.mapping.CardKt" />
+
+        <import type="android.graphics.Typeface" />
+
+        <variable
+            name="viewModel"
+            type="CardViewHolder" />
+    </data>
+
+    <FrameLayout style="@style/Wide">
+
+        <include
+            layout="@layout/card"
+            android:visibility="visible"
+            app:card="@{viewModel.item}"
+            app:checked="@{viewModel.checked}"
+            app:onClick="@{viewModel.mode == Mode.PICKER &amp;&amp; viewModel.item.verified ? viewModel::markAsSelected : viewModel::showPopUpMenu}"
+            app:selectable="@{viewModel.mode == Mode.PICKER}" />
+
+    </FrameLayout>
+
+</layout>

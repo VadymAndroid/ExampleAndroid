@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View.OnClickListener" />
+
+        <variable
+            name="titleRes"
+            type="int" />
+
+        <variable
+            name="isValid"
+            type="boolean" />
+
+        <variable
+            name="onClick"
+            type="OnClickListener" />
+
+    </data>
+
+    <LinearLayout
+        style="@style/Ripple"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{onClick}"
+        android:padding="@dimen/margin">
+
+        <TextView
+            style="@style/Wrapped"
+            android:text="@{titleRes}"
+            android:textAppearance="@style/ProfileQuestionText"
+            android:textStyle="bold"
+            tools:text="@string/profile_my_details" />
+
+        <Space style="@style/WeightedHorizontallyWrapped" />
+
+        <TextView
+            style="@style/Wrapped"
+            android:layout_marginEnd="@dimen/margin_half"
+            android:layout_marginRight="@dimen/margin_half"
+            android:drawableLeft="@drawable/ic_warning"
+            android:drawablePadding="@dimen/margin_half"
+            android:drawableStart="@drawable/ic_warning"
+            android:text="@string/error_profile_data"
+            android:textAppearance="@style/ProfileError"
+            android:visibility="@{!isValid}" />
+
+        <ImageView
+            style="@style/Wrapped"
+            app:srcCompat="@drawable/ic_arrow_right_gray"
+            tools:ignore="ContentDescription" />
+
+    </LinearLayout>
+</layout>

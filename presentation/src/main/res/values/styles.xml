@@ -1,0 +1,266 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Dark" />
+
+    <style name="AppTheme.WhiteAccent">
+        <item name="colorAccent">@color/white</item>
+    </style>
+
+    <style name="AppTheme.FaceBookAccent">
+        <item name="colorAccent">@color/fb</item>
+    </style>
+
+    <style name="SplashTheme" parent="AppTheme">
+        <item name="android:windowBackground">@drawable/splash_screen</item>
+    </style>
+
+    <style name="ErrorTextAppearance" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/red</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="Divider">
+        <item name="android:background">?android:attr/listDivider</item>
+    </style>
+
+    <style name="Divider.Horizontal">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+    </style>
+
+    <style name="Divider.Vertical">
+        <item name="android:layout_width">1dp</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="OnboardingText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+
+    <style name="CalculatorInfo" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/gray</item>
+    </style>
+
+    <style name="CalculatorInfo.Tiny">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="CalculatorInfo.Medium">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <!-- BUTTONS -->
+    <style name="GreenFlatButton" parent="@style/Widget.AppCompat.Button.Borderless.Colored">
+        <item name="colorControlHighlight">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+
+    <style name="SignUpText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">@dimen/screen_horizontal_margin</item>
+        <item name="android:layout_marginStart">@dimen/screen_horizontal_margin</item>
+        <item name="android:layout_marginEnd">@dimen/screen_horizontal_margin</item>
+        <item name="android:layout_marginRight">@dimen/screen_horizontal_margin</item>
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:fontFamily">@string/font_family_medium</item>
+    </style>
+
+    <style name="SignUpText.Header">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="SignUpText.Title">
+        <item name="android:textSize">16sp</item>
+        <item name="android:layout_marginTop">@dimen/margin</item>
+        <item name="android:layout_marginBottom">@dimen/margin</item>
+    </style>
+
+    <style name="Ripple">
+        <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <style name="Ripple.Borderless">
+        <item name="android:background">?attr/selectableItemBackgroundBorderless</item>
+    </style>
+
+    <style name="Wide.Ripple" parent="Ripple">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="Wide.Indented.Ripple" parent="Ripple">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginEnd">@dimen/screen_horizontal_margin</item>
+        <item name="android:layout_marginLeft">@dimen/screen_horizontal_margin</item>
+        <item name="android:layout_marginStart">@dimen/screen_horizontal_margin</item>
+        <item name="android:layout_marginRight">@dimen/screen_horizontal_margin</item>
+    </style>
+
+    <style name="Wide.Ripple.Borderless" parent="Ripple.Borderless">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <style name="Wide.Indented.Ripple.Borderless" parent="Wide.Ripple.Borderless">
+        <item name="android:layout_marginEnd">@dimen/screen_horizontal_margin</item>
+        <item name="android:layout_marginLeft">@dimen/screen_horizontal_margin</item>
+        <item name="android:layout_marginStart">@dimen/screen_horizontal_margin</item>
+        <item name="android:layout_marginRight">@dimen/screen_horizontal_margin</item>
+    </style>
+
+    <style name="Wrapped.Ripple.Borderless" parent="Ripple.Borderless">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+    <style name="Wrapped.Ripple" parent="Ripple">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+    <style name="Tall.Ripple.Borderless" parent="Ripple.Borderless">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+    <style name="Picker">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">24dp</item>
+        <item name="android:background">@drawable/bg_button_picker</item>
+        <item name="android:foreground">?attr/selectableItemBackgroundBorderless</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingEnd">@dimen/margin_half</item>
+        <item name="android:paddingRight">@dimen/margin_half</item>
+        <item name="android:paddingStart">@dimen/margin_half</item>
+        <item name="android:paddingLeft">@dimen/margin_half</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/picker_color</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="CheckBox" parent="Wide.Indented">
+        <item name="colorAccent">@color/colorPrimary</item>
+        <item name="android:gravity">top</item>
+        <item name="android:paddingStart">@dimen/margin_middle</item>
+        <item name="android:paddingLeft">@dimen/margin_middle</item>
+        <item name="android:layout_marginTop">@dimen/margin_middle</item>
+        <item name="android:layout_marginBottom">@dimen/margin_middle</item>
+    </style>
+
+    <style name="Theme_Dialog" parent="android:Theme.Light">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/white</item>
+    </style>
+
+    <style name="ToolbarFont" parent="OnboardingText">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="NumberLabel" parent="CalculatorInfo">
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginTop">@dimen/margin_short</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="LoanStatusText" parent="OnboardingText">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="LoanDateText" parent="@android:style/TextAppearance">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/gray_828282</item>
+    </style>
+
+    <style name="LoanDeptText" parent="LoanDateText">
+        <item name="android:textColor">@color/blue_1F92CA</item>
+    </style>
+
+    <style name="ProfileQuestionText" parent="ProfileQuestionLayout">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/gray_4C4D4D</item>
+        <item name="android:drawableEnd">@drawable/ic_arrow_right_gray</item>
+        <item name="android:drawableRight">@drawable/ic_arrow_right_gray</item>
+        <item name="android:drawablePadding">@dimen/margin_big</item>
+    </style>
+
+    <style name="ProfileQuestionLayout" parent="Wide">
+        <item name="android:padding">@dimen/margin</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <style name="ProfileError" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/red_FF3B30</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="LogoutText" parent="ProfileQuestionText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">@color/blue_1F92CA</item>
+        <item name="android:drawableEnd">@null</item>
+        <item name="android:drawableRight">@null</item>
+    </style>
+
+    <style name="AccentButton" parent="@style/Wide.Indented">
+        <item name="backgroundTint">@color/colorAccent</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="ItemCardTheme">
+        <item name="popupMenuStyle">@style/ItemCardPopupMenu</item>
+    </style>
+
+    <style name="ItemCardPopupMenu" parent="@style/Widget.AppCompat.PopupMenu">
+        <item name="overlapAnchor">true</item>
+    </style>
+
+    <style name="Input" parent="Wide.Indented.Ripple">
+        <item name="android:fontFamily">@string/font_family_medium</item>
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:paddingTop">@dimen/margin</item>
+        <item name="android:paddingBottom">@dimen/margin</item>
+    </style>
+
+    <style name="Input.Arrow">
+        <item name="android:drawableEnd">@drawable/ic_arrow_right_gray</item>
+        <item name="android:drawableRight">@drawable/ic_arrow_right_gray</item>
+    </style>
+
+    <style name="TextSizeMedium">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="Wide.Indented.AlertTextViewStyle">
+        <item name="android:layout_marginTop">@dimen/margin</item>
+        <item name="android:background">@drawable/bg_credit_status_controls_red</item>
+        <item name="android:layout_marginBottom">@dimen/margin</item>
+        <item name="android:textColor">@color/red_DB5C60</item>
+        <item name="android:drawablePadding">@dimen/margin</item>
+        <item name="android:padding">@dimen/margin</item>
+        <item name="android:drawableLeft">@drawable/ic_negative_notification</item>
+        <item name="android:drawableStart">@drawable/ic_negative_notification</item>
+    </style>
+
+</resources>

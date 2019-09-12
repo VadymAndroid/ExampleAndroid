@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Fill"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:showIn="@layout/fragment_status">
+
+    <ImageView
+        style="@style/Wide"
+        android:contentDescription="@null"
+        android:scaleType="center"
+        android:src="@drawable/ic_logo_splash" />
+
+    <ProgressBar
+        style="@style/Wide"
+        android:layout_marginTop="@dimen/margin_big" />
+
+</LinearLayout>

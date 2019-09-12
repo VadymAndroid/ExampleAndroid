@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/Fill">
+
+    <android.support.v7.widget.CardView style="@style/Wide">
+
+        <LinearLayout
+            style="@style/Wide"
+            android:orientation="vertical">
+
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

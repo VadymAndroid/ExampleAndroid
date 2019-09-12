@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="PercentageProgressPart">
+        <attr name="pointer_text" format="string" />
+        <attr name="with_progress" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="PercentageProgress">
+        <attr name="max" format="integer" />
+        <attr name="progress" format="integer" />
+        <attr name="progress_values" format="reference" />
+    </declare-styleable>
+
+</resources>

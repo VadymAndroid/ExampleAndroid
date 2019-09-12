@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="ua.mycredit.mycredit.ui.bases.input.FieldViewModel" />
+
+        <variable
+            name="viewModel"
+            type="FieldViewModel" />
+
+        <variable
+            name="hintStatic"
+            type="String" />
+
+    </data>
+
+    <LinearLayout
+        style="@style/Wide"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/Wide.Indented.Edit"
+            android:textColor="@color/gray_757575"
+            app:hintStr="@{hintStatic}"
+            app:optional="@{viewModel.optional}"
+            tools:text="Hint static" />
+
+        <include
+            layout="@layout/input_field"
+            app:viewModel="@{viewModel}" />
+
+    </LinearLayout>
+
+</layout>

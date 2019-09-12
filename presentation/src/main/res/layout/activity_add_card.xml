@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="ua.mycredit.mycredit.ui.profile.cards.AddCardActivity" />
+
+        <variable
+            name="viewModel"
+            type="AddCardActivity" />
+
+    </data>
+
+    <LinearLayout
+        style="@style/Fill"
+        android:orientation="vertical">
+
+        <ScrollView style="@style/WeightedVertically">
+
+            <LinearLayout
+                style="@style/Fill"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:id="@+id/fragment_container"
+                    style="@style/Wide" />
+
+                <FrameLayout
+                    style="@style/Wide.Indented"
+                    android:layout_marginBottom="@dimen/margin_big"
+                    android:visibility="@{viewModel.smsInputVisible}">
+
+                    <fragment
+                        android:id="@+id/card_sms_confirmation"
+                        android:name="ua.mycredit.mycredit.ui.profile.cards.CardSmsConfirmationFragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </FrameLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <Button
+            style="@style/Wide"
+            android:background="@drawable/bg_gradient_primary"
+            android:onClick="@{() -> viewModel.handleNextClick()}"
+            android:text="@string/next"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+</layout>

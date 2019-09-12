@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="ua.mycredit.core.Status" />
+
+        <import type="ua.mycredit.core.PastDue" />
+
+        <variable
+            name="status"
+            type="PastDue" />
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout style="@style/Wide">
+
+        <TextView
+            android:id="@+id/past_due"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/past_due"
+            android:textColor="@color/gray"
+            app:fontFamily="@string/font_family_medium"
+            app:layout_constraintEnd_toStartOf="@+id/view1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/past_due_val"
+            style="@style/TextSizeMedium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{@plurals/days(status.credit.pastDueDays, status.credit.pastDueDays)}"
+            app:layout_constraintEnd_toStartOf="@+id/view1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/past_due" />
+
+        <View
+            android:id="@+id/view1"
+            style="@style/Divider"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/past_due_val"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/past_due" />
+
+        <TextView
+            android:id="@+id/if_repay_tomorrow"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_half"
+            android:layout_marginStart="@dimen/margin_half"
+            android:text="@string/if_repay_tomorrow"
+            android:textColor="@color/gray"
+            app:fontFamily="@string/font_family_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/view1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/if_repay_tomorrow_val"
+            style="@style/TextSizeMedium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_half"
+            android:layout_marginStart="@dimen/margin_half"
+            android:text="@{@string/specific_uah_f(status.potentialDebts.tomorrow)}"
+            android:textColor="@color/red_DB5C60"
+            app:fontFamily="@string/font_family_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/view1"
+            app:layout_constraintTop_toBottomOf="@+id/if_repay_tomorrow" />
+
+
+        <TextView
+            android:id="@+id/credit_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/loan_creation_date"
+            android:textColor="@color/gray"
+            app:fontFamily="@string/font_family_medium"
+            app:layout_constraintEnd_toStartOf="@+id/view2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/view2" />
+
+        <TextView
+            android:id="@+id/credit_date_val"
+            style="@style/TextSizeMedium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:dateTime="@{status.credit.creationDate}"
+            app:layout_constraintEnd_toStartOf="@+id/view2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/credit_date" />
+
+        <View
+            android:id="@+id/view2"
+            style="@style/Divider"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/margin_big"
+            app:layout_constraintBottom_toBottomOf="@+id/if_repay_after_val"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view1" />
+
+        <TextView
+            android:id="@+id/if_repay_after"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_half"
+            android:layout_marginStart="@dimen/margin_half"
+            android:text="@{@string/if_repay_after(7, 7)}"
+            android:textColor="@color/gray"
+            app:fontFamily="@string/font_family_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/view2"
+            app:layout_constraintTop_toTopOf="@+id/view2"
+            tools:text="@string/if_repay_after" />
+
+        <TextView
+            android:id="@+id/if_repay_after_val"
+            style="@style/TextSizeMedium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_half"
+            android:layout_marginStart="@dimen/margin_half"
+            android:text="@{@string/specific_uah_f(status.potentialDebts.inWeek)}"
+            android:textColor="@color/red_DB5C60"
+            app:fontFamily="@string/font_family_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/view2"
+            app:layout_constraintTop_toBottomOf="@+id/if_repay_after" />
+
+        <TextView
+            android:id="@+id/term"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/loan_term"
+            android:textColor="@color/gray"
+            app:fontFamily="@string/font_family_medium"
+            app:layout_constraintEnd_toStartOf="@+id/view3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/view3" />
+
+        <TextView
+            android:id="@+id/term_val"
+            style="@style/TextSizeMedium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{@plurals/days(status.credit.termOriginal, status.credit.termOriginal)}"
+            app:layout_constraintEnd_toStartOf="@+id/view3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/term" />
+
+        <View
+            android:id="@+id/view3"
+            style="@style/Divider"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/margin_big"
+            app:layout_constraintBottom_toBottomOf="@+id/if_repay_after_2_val"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+        <TextView
+            android:id="@+id/if_repay_after_2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_half"
+            android:layout_marginStart="@dimen/margin_half"
+            android:text="@{@string/if_repay_after(14, 14)}"
+            android:textColor="@color/gray"
+            app:fontFamily="@string/font_family_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/view3"
+            app:layout_constraintTop_toTopOf="@+id/view3"
+            tools:text="@string/if_repay_after" />
+
+        <TextView
+            android:id="@+id/if_repay_after_2_val"
+            style="@style/TextSizeMedium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_half"
+            android:layout_marginStart="@dimen/margin_half"
+            android:text="@{@string/specific_uah_f(status.potentialDebts.inTwoWeek)}"
+            android:textColor="@color/red_DB5C60"
+            app:fontFamily="@string/font_family_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/view3"
+            app:layout_constraintTop_toBottomOf="@+id/if_repay_after_2" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

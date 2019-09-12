@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="ua.mycredit.mycredit.ui.profile.profile.contacts.ContactsFragment" />
+
+        <import type="ua.mycredit.mycredit.Screens" />
+
+        <import type="ua.mycredit.mycredit.R" />
+
+        <variable
+            name="viewModel"
+            type="ContactsFragment" />
+
+    </data>
+
+    <LinearLayout
+        style="@style/Wide"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <android.support.v7.widget.CardView
+            style="@style/Wide"
+            app:cardElevation="@dimen/shadow_small">
+
+            <LinearLayout
+                style="@style/Wide"
+                android:layout_marginTop="@dimen/margin"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/Wide.Indented"
+                    android:text="@string/hint_your_phone_number_login" />
+
+                <TextView
+                    style="@style/Input.Arrow"
+                    android:onClick="@{() -> viewModel.router.navigateTo(Screens.ERROR_PERSONAL_DATA_UNEDITABLE)}"
+                    android:text="@{viewModel.phone}"
+                    tools:text="+380999379992" />
+
+                <TextView
+                    style="@style/Wide.Indented"
+                    android:layout_marginTop="@dimen/margin"
+                    android:text="@string/hint_your_email" />
+
+                <TextView
+                    style="@style/Input"
+                    android:enabled="false"
+                    android:text="@{viewModel.email}"
+                    android:textColor="@color/disabled"
+                    tools:text="Test.email@gmail.com" />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin" />
+
+        <android.support.v7.widget.CardView
+            style="@style/Wide"
+            app:cardElevation="@dimen/shadow_small">
+
+            <TextView
+                style="@style/Input.Arrow"
+                android:onClick="@{() -> viewModel.router.navigateTo(Screens.Profile.Contacts.EDIT_PASSWORD)}"
+                android:text="@string/edit_password" />
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+</layout>

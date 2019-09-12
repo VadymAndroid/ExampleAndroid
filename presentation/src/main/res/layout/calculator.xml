@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="ua.mycredit.mycredit.ui.calculator.CalculatorViewModel" />
+
+        <import type="ua.mycredit.core.Product" />
+
+        <variable
+            name="viewModel"
+            type="CalculatorViewModel" />
+
+    </data>
+
+    <LinearLayout
+        style="@style/Fill"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/choose_sum_and_term"
+            style="@style/WeightedVertically"
+            android:gravity="center"
+            android:text="@string/choose_sum_and_term"
+            android:textAppearance="@android:style/TextAppearance"
+            android:textColor="@color/colorPrimaryDark"
+            android:visibility="@{viewModel.mainView}" />
+
+        <RelativeLayout style="@style/Wide">
+
+            <FrameLayout
+                android:id="@+id/seek"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginBottom="@dimen/margin_half"
+                android:layout_marginTop="@dimen/margin_half">
+
+                <ua.mycredit.mycredit.ui.custom.CircleSeekBar
+                    android:id="@+id/moneySeekBar"
+                    android:layout_width="315dp"
+                    android:layout_height="315dp"
+                    android:layout_gravity="center"
+                    android:padding="6dp"
+                    app:endText="@{@string/specific_uah_d(viewModel.moneyProcess.ultimate)}"
+                    app:maxProcess="@{viewModel.moneyProcess.maxProcess}"
+                    app:maxProcessValue="@{viewModel.moneyProcess.maxProcessValue}"
+                    app:minProcessValue="@{viewModel.moneyProcess.minProcessValue}"
+
+                    app:onValueChanged="@{viewModel::onMoneyValueChanged}"
+                    app:value="@={viewModel.money}"
+                    app:wheel_end_text_color="@color/calculator_text_end"
+                    app:wheel_end_text_size="@dimen/calculator_seek_text_size"
+                    app:wheel_has_wheel_shadow="true"
+
+                    app:wheel_pointer_drawable="@drawable/pointer_calculator"
+                    app:wheel_reached_color="@color/calculator_money_dark"
+                    app:wheel_reached_color_from="@color/calculator_money_light"
+                    app:wheel_reached_has_corner_round="false"
+                    app:wheel_reached_width="@dimen/calculator_seek_height"
+                    app:wheel_scroll_only_one_circle="true"
+                    app:wheel_shadow_radius="@dimen/margin_short"
+                    app:wheel_start_text="@string/ultimate_minLoan"
+                    app:wheel_start_text_color="@color/white"
+                    app:wheel_start_text_size="@dimen/calculator_seek_text_size"
+                    app:wheel_unreached_color="@color/calculator_unreached_color"
+                    app:wheel_unreached_width="@dimen/calculator_seek_height" />
+
+                <!--     300-32-32 = 236   -->
+                <ua.mycredit.mycredit.ui.custom.CircleSeekBar
+                    android:id="@+id/daysSeekBar"
+                    android:layout_width="241dp"
+                    android:layout_height="241dp"
+                    android:layout_gravity="center"
+                    android:padding="6dp"
+                    app:endText="@{@plurals/days(viewModel.daysProcess.ultimate, viewModel.daysProcess.ultimate)}"
+                    app:maxProcess="@{viewModel.daysProcess.maxProcess}"
+                    app:maxProcessValue="@{viewModel.daysProcess.maxProcessValue}"
+                    app:minProcessValue="@{viewModel.daysProcess.minProcessValue}"
+
+                    app:onValueChanged="@{viewModel::onDaysValueChanged}"
+                    app:value="@={viewModel.days}"
+                    app:wheel_end_text_color="@color/calculator_text_end"
+                    app:wheel_end_text_size="@dimen/calculator_seek_text_size"
+                    app:wheel_has_wheel_shadow="true"
+
+                    app:wheel_pointer_drawable="@drawable/pointer_calculator"
+                    app:wheel_reached_color="@color/calculator_days_dark"
+                    app:wheel_reached_color_from="@color/calculator_days_light"
+                    app:wheel_reached_has_corner_round="false"
+                    app:wheel_reached_width="@dimen/calculator_seek_height"
+                    app:wheel_scroll_only_one_circle="true"
+                    app:wheel_shadow_radius="@dimen/margin_short"
+                    app:wheel_start_text="@string/ultimate_minDays"
+                    app:wheel_start_text_color="@color/white"
+
+                    app:wheel_start_text_size="@dimen/calculator_seek_text_size"
+                    app:wheel_unreached_color="@color/calculator_unreached_color"
+                    app:wheel_unreached_width="@dimen/calculator_seek_height" />
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="156dp"
+                    android:layout_height="156dp"
+                    android:layout_gravity="center"
+                    app:cardCornerRadius="78dp"
+                    app:cardElevation="4dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/calculatorBorrowQuantity"
+                            style="@style/Wrapped"
+                            android:layout_marginBottom="@dimen/margin_half"
+                            android:layout_marginTop="@dimen/margin_short"
+                            android:background="@drawable/bg_dotted_text"
+                            android:textColor="@color/calculator_borrow"
+                            android:textSize="30sp"
+                            app:money="@{viewModel.getMoneyFrom(viewModel.money)}"
+                            tools:text="1000" />
+
+                        <TextView
+                            android:id="@+id/calculatorDaysQuantity"
+                            style="@style/Wrapped"
+                            android:text="@{@plurals/days(viewModel.days, viewModel.days)}"
+                            android:textSize="16sp"
+                            tools:text="6 дней" />
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+            </FrameLayout>
+
+            <View
+                android:id="@+id/seekDivider"
+                style="@style/Divider.Horizontal"
+                android:layout_below="@+id/seek"
+                android:layout_marginEnd="@dimen/margin"
+                android:layout_marginStart="@dimen/margin" />
+
+            <RelativeLayout
+                android:id="@+id/information"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/seekDivider"
+                android:layout_marginEnd="@dimen/margin"
+                android:layout_marginLeft="@dimen/margin"
+                android:layout_marginRight="@dimen/margin"
+                android:layout_marginStart="@dimen/margin"
+                android:layout_marginTop="@dimen/margin_half"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/borrowContainer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/CalculatorInfo.Tiny"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/borrow" />
+
+                    <TextView
+                        android:id="@+id/borrowQuantity"
+                        style="@style/CalculatorInfo.Medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:money="@{viewModel.getMoneyFrom(viewModel.money)}"
+                        tools:text="1000 грн" />
+
+                </LinearLayout>
+
+                <TextView
+                    style="@style/CalculatorInfo.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/borrowContainer"
+                    android:layout_toLeftOf="@+id/percentContainer"
+                    android:layout_toRightOf="@+id/borrowContainer"
+                    android:layout_toStartOf="@+id/percentContainer"
+                    android:gravity="center"
+                    android:text="@string/symbol_plus"
+                    tools:text="+" />
+
+                <LinearLayout
+                    android:id="@+id/percentContainer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/CalculatorInfo.Tiny"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/percent" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/strikePercentQuantity"
+                            style="@style/CalculatorInfo.Medium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/margin_half"
+                            android:layout_marginRight="@dimen/margin_half"
+                            android:textColor="@color/colorPrimary"
+                            android:visibility="@{viewModel.usePromo}"
+                            app:strikeText="@{@string/specific_uah_d(viewModel.getPercent(viewModel.money, viewModel.days, Product.USUAL_PERCENT))}"
+                            tools:text="20 грн" />
+
+                        <TextView
+                            android:id="@+id/percentQuantity"
+                            style="@style/CalculatorInfo.Medium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:money="@{viewModel.getPercent(viewModel.money, viewModel.days)}"
+                            tools:text="10 грн" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    style="@style/CalculatorInfo.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/percentContainer"
+                    android:layout_toLeftOf="@+id/resultContainer"
+                    android:layout_toRightOf="@+id/percentContainer"
+                    android:layout_toStartOf="@+id/resultContainer"
+                    android:gravity="center"
+                    android:text="@string/symbol_equals"
+                    tools:ignore="RtlCompat"
+                    tools:text="=" />
+
+                <LinearLayout
+                    android:id="@+id/resultContainer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/CalculatorInfo.Tiny"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/give" />
+
+                    <TextView
+                        android:id="@+id/giveQuantity"
+                        style="@style/CalculatorInfo.Medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        app:money="@{viewModel.getGiveQuantity(viewModel.money, viewModel.days)}"
+                        tools:text="1010 грн" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/discount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/information"
+                android:layout_centerHorizontal="true"
+                android:text="@{@string/discount_pattern(viewModel.discount)}"
+                android:textSize="10sp"
+                android:visibility="@{viewModel.usePromo}"
+                tools:text="Скидка 20%" />
+
+            <TextView
+                android:id="@+id/until"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/information"
+                android:layout_marginBottom="@dimen/margin_half"
+                android:layout_marginEnd="@dimen/margin"
+                android:layout_marginRight="@dimen/margin"
+                android:textSize="10sp"
+                app:until="@{viewModel.getUntil(viewModel.days)}"
+                tools:text="до 10 февраля" />
+
+            <View
+                android:id="@+id/informationDivider"
+                style="@style/Divider.Horizontal"
+                android:layout_below="@+id/until"
+                android:layout_marginEnd="@dimen/margin"
+                android:layout_marginStart="@dimen/margin" />
+
+        </RelativeLayout>
+
+        <FrameLayout style="@style/WeightedVertically">
+
+            <Button
+                android:id="@+id/promocodeButton"
+                style="@style/GreenFlatButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:onClick="@{() -> viewModel.enterPromoCode()}"
+                android:text="@string/do_you_have_promocode"
+                android:textAllCaps="false" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+</layout>

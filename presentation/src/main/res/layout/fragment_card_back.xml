@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="ua.mycredit.mycredit.ui.authentication.registration.card.CardBackViewModel" />
+
+        <variable
+            name="viewModel"
+            type="CardBackViewModel" />
+
+    </data>
+
+    <FrameLayout style="@style/Wide">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/card_input_margin"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="8dp"
+            app:cardUseCompatPadding="true">
+
+            <RelativeLayout
+                android:id="@+id/parent"
+                android:layout_width="match_parent"
+                android:layout_height="222dp">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="40dp"
+                    android:background="@color/card_line" />
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cvv_explanation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_margin="@dimen/margin_middle"
+                    app:cardBackgroundColor="@color/transparent"
+                    app:cardCornerRadius="47dp">
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_group_8" />
+
+                </android.support.v7.widget.CardView>
+
+                <LinearLayout
+                    style="@style/Wrapped"
+                    android:layout_below="@+id/cvv_explanation"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/margin">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/margin_short"
+                        android:layout_marginRight="@dimen/margin_short"
+                        android:text="@string/cvv"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <br.com.sapereaude.maskedEditText.MaskedEditText
+                        android:id="@+id/cvv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/transparent"
+                        android:hint="@string/hint_cvv"
+                        android:inputType="number"
+                        android:onTextChanged="@{viewModel::onCvvChanged}"
+                        android:text="@={viewModel.cvv}"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black"
+                        android:textSize="16sp"
+                        app:allowed_chars="1234567890"
+                        app:keep_hint="true"
+                        app:mask="###"
+                        app:onEditorActionListener="@{(v, actionId, event) -> viewModel.onEditorAction(actionId)}"
+                        app:textColorHint="@{viewModel.cvvError ? @color/red : @color/gray_757575}" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </FrameLayout>
+</layout>

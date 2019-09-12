@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="ua.mycredit.mycredit.ui.bases.action.SetupToolbarAction" />
+
+        <variable
+            name="viewModel"
+            type="SetupToolbarAction" />
+
+    </data>
+
+    <android.support.design.widget.AppBarLayout style="@style/Wide">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/Wide"
+            android:background="@drawable/bg_gradient_primary"
+            android:theme="@style/AppTheme.PopupOverlay"
+            app:navigationIcon="?attr/homeAsUpIndicator"
+            app:navigationOnClickListener="@{() -> viewModel.onNavigationClick()}"
+            app:onMenuItemClickListener="@{viewModel::onMenuItemClick}" />
+
+    </android.support.design.widget.AppBarLayout>
+
+</layout>

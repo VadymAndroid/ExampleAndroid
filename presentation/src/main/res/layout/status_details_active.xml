@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="ua.mycredit.core.Credit" />
+
+        <variable
+            name="credit"
+            type="Credit" />
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout style="@style/Wide">
+
+        <TextView
+            android:id="@+id/loan_amount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/loan_amount"
+            android:textColor="@color/gray"
+            app:fontFamily="@string/font_family_medium"
+            app:layout_constraintEnd_toStartOf="@+id/view1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/loan_amount_val"
+            style="@style/TextSizeMedium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{@string/specific_uah_f(credit.amount)}"
+            android:textColor="@color/gray_707171"
+            app:layout_constraintEnd_toStartOf="@+id/view1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/loan_amount" />
+
+        <View
+            android:id="@+id/view1"
+            style="@style/Divider"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/loan_amount_val"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/loan_amount" />
+
+        <TextView
+            android:id="@+id/amount_to_repay"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_half"
+            android:layout_marginStart="@dimen/margin_half"
+            android:text="@string/loan_current_debt"
+            android:textColor="@color/gray"
+            app:fontFamily="@string/font_family_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/view1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/amount_to_repay_val"
+            style="@style/TextSizeMedium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_half"
+            android:layout_marginStart="@dimen/margin_half"
+            android:text="@{@string/specific_uah_f_pennies(credit.outstandingBalance)}"
+            android:textColor="@color/blue_1480CB"
+            app:fontFamily="@string/font_family_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/view1"
+            app:layout_constraintTop_toBottomOf="@+id/amount_to_repay" />
+
+
+        <TextView
+            android:id="@+id/creation_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/loan_creation_date"
+            android:textColor="@color/gray"
+            app:fontFamily="@string/font_family_medium"
+            app:layout_constraintEnd_toStartOf="@+id/view2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/view2" />
+
+        <TextView
+            android:id="@+id/creation_date_val"
+            style="@style/TextSizeMedium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray_707171"
+            app:dateTime="@{credit.creationDate}"
+            app:dateTimeStyle='@{"M-"}'
+            app:layout_constraintEnd_toStartOf="@+id/view2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/creation_date" />
+
+        <View
+            android:id="@+id/view2"
+            style="@style/Divider"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/margin_big"
+            app:layout_constraintBottom_toBottomOf="@+id/until_term_end_left_val"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view1" />
+
+        <TextView
+            android:id="@+id/until_term_end_left"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_half"
+            android:layout_marginStart="@dimen/margin_half"
+            android:text="@string/loan_term_end"
+            android:textColor="@color/gray"
+            app:fontFamily="@string/font_family_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/view2"
+            app:layout_constraintTop_toTopOf="@+id/view2" />
+
+        <TextView
+            android:id="@+id/until_term_end_left_val"
+            style="@style/TextSizeMedium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_half"
+            android:layout_marginStart="@dimen/margin_half"
+            android:text="@{@plurals/days(credit.daysToFinish, credit.daysToFinish)}"
+            android:textColor="@color/blue_1480CB"
+            app:fontFamily="@string/font_family_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/view2"
+            app:layout_constraintTop_toBottomOf="@+id/until_term_end_left" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

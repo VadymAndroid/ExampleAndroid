@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_launch">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="?attr/actionBarSize">
+
+        <ImageView
+            android:layout_width="421dp"
+            android:layout_height="421dp"
+            android:layout_gravity="center"
+            android:src="@drawable/bg_launch_dash_last"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:layout_width="347dp"
+            android:layout_height="347dp"
+            android:layout_gravity="center"
+            android:src="@drawable/bg_launch_dash_third"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:layout_width="274dp"
+            android:layout_height="274dp"
+            android:layout_gravity="center"
+            android:src="@drawable/bg_launch_dash_second"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:layout_width="219dp"
+            android:layout_height="219dp"
+            android:layout_gravity="center"
+            android:src="@drawable/bg_launch_dash_main"
+            tools:ignore="ContentDescription" />
+
+    </FrameLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="?attr/actionBarSize" />
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tabDots"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|bottom"
+        app:tabBackground="@drawable/indicator_selector"
+        app:tabGravity="center"
+        app:tabIndicatorHeight="0dp" />
+
+</android.support.design.widget.CoordinatorLayout>

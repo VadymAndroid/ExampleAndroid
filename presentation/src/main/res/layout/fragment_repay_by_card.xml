@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="ua.mycredit.mycredit.ui.profile.repayloan.RepayByCardViewModel" />
+
+        <import type="ua.mycredit.mycredit.ui.ExtensionsKt" />
+
+        <variable
+            name="viewModel"
+            type="RepayByCardViewModel" />
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        style="@style/Wide"
+        android:background="@color/white"
+        android:focusableInTouchMode="true">
+
+        <TextView
+            android:id="@+id/company"
+            style="@style/Wrapped"
+            android:layout_marginStart="@dimen/margin"
+            android:layout_marginLeft="@dimen/margin"
+            android:layout_marginTop="@dimen/margin"
+            android:text="@string/company"
+            android:textColor="@color/gray_4C4D4D"
+            android:textSize="@dimen/text_small"
+            app:fontFamily="@string/font_family_medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/myCredit"
+            style="@style/Wrapped"
+            android:layout_marginTop="@dimen/margin_short"
+            android:text="@string/my_credit_one_line"
+            android:textColor="@color/gray_707171"
+            android:textSize="@dimen/text_middle"
+            app:layout_constraintStart_toStartOf="@id/company"
+            app:layout_constraintTop_toBottomOf="@id/company" />
+
+        <View
+            android:id="@+id/smallDivider"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:background="@color/gray_alpha_10_000000"
+            app:layout_constraintBottom_toBottomOf="@id/myCredit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/company" />
+
+        <TextView
+            android:id="@+id/numberOfApply"
+            style="@style/Wrapped"
+            android:layout_marginStart="@dimen/margin"
+            android:layout_marginLeft="@dimen/margin"
+            android:text="@string/number_of_apply"
+            android:textColor="@color/gray_4C4D4D"
+            android:textSize="@dimen/text_small"
+            app:fontFamily="@string/font_family_medium"
+            app:layout_constraintStart_toEndOf="@id/smallDivider"
+            app:layout_constraintTop_toTopOf="@id/company" />
+
+        <TextView
+            android:id="@+id/publicId"
+            style="@style/Wrapped"
+            android:layout_marginTop="@dimen/margin_short"
+            android:text="@{viewModel.credit.publicId}"
+            android:textColor="@color/gray_707171"
+            android:textSize="@dimen/text_middle"
+            app:layout_constraintStart_toStartOf="@id/numberOfApply"
+            app:layout_constraintTop_toBottomOf="@id/numberOfApply"
+            tools:text="123123" />
+
+        <TextView
+            android:id="@+id/payout_point"
+            style="@style/Wrapped"
+            android:layout_marginTop="@dimen/margin"
+            android:text="@string/payout_appointment"
+            android:textColor="@color/gray_4C4D4D"
+            android:textSize="@dimen/text_small"
+            app:fontFamily="@string/font_family_medium"
+            app:layout_constraintStart_toStartOf="@id/company"
+            app:layout_constraintTop_toBottomOf="@id/myCredit" />
+
+        <TextView
+            android:id="@+id/payout_loan_with_date"
+            style="@style/Wrapped"
+            android:layout_below="@id/payout_point"
+            android:layout_marginTop="@dimen/margin_short"
+            android:paddingLeft="@dimen/margin"
+            android:paddingRight="@dimen/margin"
+            android:textColor="@color/gray_707171"
+            android:textSize="@dimen/text_middle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/payout_point"
+            app:paymentPurpose="@{viewModel.credit}"
+            app:repaymentType="@{viewModel.repaymentType}"
+            tools:text="@string/lorem_ipsum" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/margin"
+            android:background="@color/gray_alpha_10_000000"
+            app:layout_constraintTop_toBottomOf="@id/payout_loan_with_date" />
+
+        <View
+            android:id="@+id/payoutBlockBackground"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/blue_F7FAFC"
+            app:layout_constraintBottom_toBottomOf="@id/change_card"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/sum_to_pay"
+            style="@style/Wrapped"
+            android:layout_marginStart="@dimen/margin"
+            android:layout_marginLeft="@dimen/margin"
+            android:layout_marginTop="@dimen/margin"
+            android:text="@string/sum_to_pay"
+            android:textColor="@color/gray_4C4D4D"
+            android:textSize="@dimen/text_small"
+            app:fontFamily="@string/font_family_medium"
+            app:layout_constraintStart_toStartOf="@id/payoutBlockBackground"
+            app:layout_constraintTop_toTopOf="@id/payoutBlockBackground" />
+
+        <TextView
+            android:id="@+id/editText"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="@dimen/margin"
+            android:background="@drawable/payout_loan_edit_background"
+            android:gravity="center_vertical"
+            android:onClick="@{() -> viewModel.changeAmount()}"
+            android:paddingStart="@dimen/margin"
+            android:paddingLeft="@dimen/margin"
+            android:paddingEnd="@dimen/margin"
+            android:paddingRight="@dimen/margin"
+            android:text="@{@string/specific_uah_f_pennies(viewModel.amount)}"
+            android:textAppearance="@android:style/TextAppearance.Medium"
+            android:textColor="@color/blue_1480CB"
+            app:layout_constraintEnd_toStartOf="@id/smallDivider"
+            app:layout_constraintStart_toStartOf="@id/sum_to_pay"
+            app:layout_constraintTop_toBottomOf="@id/sum_to_pay"
+            tools:text="100 грн" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_horizontal|start"
+            android:textSize="@dimen/text_small"
+            app:clickableText="@{@string/specific_uah_f_pennies(viewModel.credit.currentDebt)}"
+            app:highlightColor="@{@color/blue_1480CB}"
+            app:layout_constraintBottom_toBottomOf="@id/editText"
+            app:layout_constraintStart_toStartOf="@id/numberOfApply"
+            app:layout_constraintTop_toTopOf="@id/editText"
+            app:plainText="@{@string/full_repayment_amount}" />
+
+        <TextView
+            android:id="@+id/card"
+            style="@style/Wrapped"
+            android:layout_marginTop="@dimen/margin_big"
+            android:text="@string/card"
+            android:textColor="@color/gray_4C4D4D"
+            android:textSize="@dimen/text_small"
+            app:fontFamily="@string/font_family_medium"
+            app:layout_constraintStart_toStartOf="@id/sum_to_pay"
+            app:layout_constraintTop_toBottomOf="@id/editText" />
+
+        <ViewSwitcher
+            android:id="@+id/item_card"
+            style="@style/Wide"
+            android:layout_marginTop="@dimen/margin_half"
+            app:displayedChild="@{viewModel.card == null ? 0 : 1}"
+            app:layout_constraintEnd_toEndOf="@id/payoutBlockBackground"
+            app:layout_constraintStart_toStartOf="@id/payoutBlockBackground"
+            app:layout_constraintTop_toBottomOf="@id/card">
+
+            <TextView
+                style="@style/Wide.Indented"
+                android:layout_gravity="center"
+                android:text="@string/main_card_not_verified"
+                android:textAppearance="@android:style/TextAppearance" />
+
+            <include
+                style="@style/Wide.Indented"
+                layout="@layout/card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:card="@{viewModel.card}"
+                app:forciblyColored="@{true}" />
+        </ViewSwitcher>
+
+        <TextView
+            android:id="@+id/change_card"
+            style="@style/Wrapped"
+            android:layout_marginTop="@dimen/margin"
+            android:layout_marginBottom="84dp"
+            android:onClick="@{() -> viewModel.goToCardsList()}"
+            android:textColor="@color/blue_1F92CB"
+            android:textSize="@dimen/text_small"
+            app:layout_constraintBottom_toBottomOf="@id/payoutBlockBackground"
+            app:layout_constraintEnd_toEndOf="@id/payoutBlockBackground"
+            app:layout_constraintStart_toStartOf="@id/payoutBlockBackground"
+            app:layout_constraintTop_toBottomOf="@id/item_card"
+            app:underlineText="@{viewModel.card == null ? @string/go_to_card_list : @string/pay_with_another_card}"
+            tools:text="@string/go_to_card_list" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

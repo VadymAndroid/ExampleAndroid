@@ -1,0 +1,278 @@
+[
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\fragment_reset_password_by_phone.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\fragment_reset_password_by_phone.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\activity_profile.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\activity_profile.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\input_text_picker.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\input_text_picker.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\status_details_past_due.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\status_details_past_due.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\fb_email.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\fb_email.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\fragment_edit_password.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\fragment_edit_password.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\status_details_active.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\status_details_active.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\credit_status_description.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\credit_status_description.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\dialog_fragment_simple_input_text.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\dialog_fragment_simple_input_text.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\input_variant_picker.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\input_variant_picker.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\fragment_card_front.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\fragment_card_front.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\activity_add_card.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\activity_add_card.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\activity_question.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\activity_question.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\fragment_card_back.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\fragment_card_back.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\status_details_restructured.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\status_details_restructured.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\income_fields.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\income_fields.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\item_faq.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\item_faq.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\requirement.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\requirement.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\simple_button.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\simple_button.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\toolbar.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\toolbar.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\fragment_sign_up_address.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\fragment_sign_up_address.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\swipe_refresh_layout.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\swipe_refresh_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\fragment_extra_personal_info.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\fragment_extra_personal_info.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\dialog_fragment_enum_picker.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\dialog_fragment_enum_picker.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\fragment_prolongation_preferences.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\fragment_prolongation_preferences.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\fragment_status.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\fragment_status.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\item_history.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\item_history.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\fragment_temporarily_unemployed.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\fragment_temporarily_unemployed.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\fragment_card_sms_confirmation.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\fragment_card_sms_confirmation.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\input_field_hint_static.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\input_field_hint_static.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\fragment_bank.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\fragment_bank.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\item_card.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\item_card.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\preloader.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\preloader.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\input_picker_layout.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\input_picker_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\fragment_passport.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\fragment_passport.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\dialog_fragment_phone.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\dialog_fragment_phone.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\fragment_sign_in.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\fragment_sign_in.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\activity_details.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\activity_details.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\fragment_contacts.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\fragment_contacts.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\fragment_personal_information.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\fragment_personal_information.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\fragment_web_view.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\fragment_web_view.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\card.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\card.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\item_detail_section.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\item_detail_section.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\three_step_progress.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\three_step_progress.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\fragment_sign_up_phone.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\fragment_sign_up_phone.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\password_requirements.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\password_requirements.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\fragment_password.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\fragment_password.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\fragment_student.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\fragment_student.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\fragment_calculator.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\fragment_calculator.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\input_field.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\input_field.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\item_contract_addition.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\item_contract_addition.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\fragment_finance.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\fragment_finance.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\dialog_uneditable_personal_data.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\dialog_uneditable_personal_data.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\fragment_invalid.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\fragment_invalid.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\fragment_repay_by_card.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\fragment_repay_by_card.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\descriptions_pane.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\descriptions_pane.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\footer_fragment_cards.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\footer_fragment_cards.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\list_content.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\list_content.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\activity_sign_up.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\activity_sign_up.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\password_requirement.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\password_requirement.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\sms_code.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\sms_code.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\fragment_agreement.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\fragment_agreement.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\fragment_personal_data.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\fragment_personal_data.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\input_phone_number.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\input_phone_number.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\dialog_fragment_text.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\dialog_fragment_text.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\resendable_sms_code.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\resendable_sms_code.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\activity_repay_loan.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\activity_repay_loan.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\calculator.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\calculator.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\build\\intermediates\\incremental\\mergeFullDebugResources\\stripped.dir\\layout\\fragment_profile.xml",
+        "source": "C:\\Users\\User\\Documents\\AndroidStudioProject\\mycredit-native-develop\\presentation\\src\\main\\res\\layout\\fragment_profile.xml"
+    }
+]

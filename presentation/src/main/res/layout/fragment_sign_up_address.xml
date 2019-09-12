@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="ua.mycredit.mycredit.ui.authentication.registration.passport.address.SignUpAddressViewModel" />
+
+        <import type="android.text.TextUtils" />
+
+        <import type="ua.mycredit.mycredit.ui.authentication.registration.passport.address.SignUpAddressViewModel.AddressPlaceType" />
+
+        <variable
+            name="viewModel"
+            type="SignUpAddressViewModel" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/margin"
+        android:paddingTop="@dimen/margin">
+
+        <TextView
+            style="@style/SignUpText.Header"
+            android:text="@string/passport_data" />
+
+        <TextView
+            style="@style/SignUpText.Title"
+            android:text="@string/addresses" />
+
+        <android.support.v7.widget.CardView
+            style="@style/Wide.Indented"
+            android:layout_marginBottom="@dimen/margin"
+            android:layout_marginTop="@dimen/margin"
+            app:cardElevation="4dp"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    style="@style/Ripple.Borderless"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{() -> viewModel.showPlaces(AddressPlaceType.RESIDENCE)}"
+                    android:padding="@dimen/margin"
+                    android:src="@drawable/places_ic_search"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="@string/address_search"
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:onClick="@{() -> viewModel.showPlaces(AddressPlaceType.RESIDENCE)}"
+                    android:text="@{viewModel.addressResidenceField}"
+                    android:textSize="20sp" />
+
+                <ImageView
+                    style="@style/Ripple.Borderless"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{() -> viewModel.resetResidencePlaces()}"
+                    android:padding="@dimen/margin"
+                    android:src="@drawable/places_ic_clear"
+                    android:visibility="@{!TextUtils.isEmpty(viewModel.addressResidenceField)}"
+                    tools:ignore="ContentDescription" />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <include
+            layout="@layout/input_field"
+            app:viewModel="@{viewModel.regionResidence}" />
+
+        <include
+            layout="@layout/input_field"
+            app:viewModel="@{viewModel.cityResidence}" />
+
+        <include
+            layout="@layout/input_field"
+            app:viewModel="@{viewModel.streetResidence}" />
+
+        <LinearLayout
+            style="@style/Wide.Indented"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <include
+                layout="@layout/input_field"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:viewModel="@{viewModel.houseResidence}" />
+
+            <include
+                layout="@layout/input_field"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:viewModel="@{viewModel.housingResidence}" />
+
+            <include
+                layout="@layout/input_field"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:viewModel="@{viewModel.apartmentResidence}" />
+
+        </LinearLayout>
+
+        <android.support.v7.widget.AppCompatCheckBox
+            style="@style/Wide.Indented"
+            android:layout_marginBottom="@dimen/margin"
+            android:layout_marginTop="@dimen/margin"
+            android:enabled="@{viewModel.profile.signUpFlow || viewModel.profile.addressRegister == null}"
+            android:text="@string/live_in_residence"
+            app:checkedSafe="@={viewModel.liveInRegister}" />
+
+        <TextView
+            style="@style/SignUpText.Title"
+            android:text="@string/register_addresses"
+            android:visibility="@{!viewModel.liveInRegister}" />
+
+        <android.support.v7.widget.CardView
+            style="@style/Wide.Indented"
+            android:layout_marginBottom="@dimen/margin"
+            android:layout_marginTop="@dimen/margin"
+            android:visibility="@{!viewModel.liveInRegister}"
+            app:cardElevation="4dp"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout style="@style/Wide">
+
+                <ImageView
+                    style="@style/Ripple.Borderless"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{() -> viewModel.showPlaces(AddressPlaceType.REGISTER)}"
+                    android:padding="@dimen/margin"
+                    android:src="@drawable/places_ic_search"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="@string/address_search"
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:onClick="@{() -> viewModel.showPlaces(AddressPlaceType.REGISTER)}"
+                    android:text="@{viewModel.address}"
+                    android:textSize="20sp" />
+
+                <ImageView
+                    style="@style/Ripple.Borderless"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{() -> viewModel.resetPlaces()}"
+                    android:padding="@dimen/margin"
+                    android:src="@drawable/places_ic_clear"
+                    android:visibility="@{!TextUtils.isEmpty(viewModel.address)}"
+                    tools:ignore="ContentDescription" />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <LinearLayout
+            style="@style/Wide"
+            android:orientation="vertical"
+            android:visibility="@{!viewModel.liveInRegister}">
+
+            <include
+                layout="@layout/input_field"
+                app:viewModel="@{viewModel.region}" />
+
+            <include
+                layout="@layout/input_field"
+                app:viewModel="@{viewModel.city}" />
+
+            <include
+                layout="@layout/input_field"
+                app:viewModel="@{viewModel.street}" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/Wide.Indented"
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            android:visibility="@{!viewModel.liveInRegister}">
+
+            <include
+                layout="@layout/input_field"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:viewModel="@{viewModel.house}" />
+
+            <include
+                layout="@layout/input_field"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:viewModel="@{viewModel.housing}" />
+
+            <include
+                layout="@layout/input_field"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:viewModel="@{viewModel.apartment}" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

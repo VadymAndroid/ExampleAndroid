@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="ua.mycredit.mycredit.ui.profile.profile.details.UneditablePersonalDataDialog" />
+
+        <variable
+            name="viewModel"
+            type="UneditablePersonalDataDialog" />
+    </data>
+
+    <LinearLayout
+        style="@style/Wide"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingEnd="@dimen/margin"
+        android:paddingLeft="@dimen/margin"
+        android:paddingRight="@dimen/margin"
+        android:paddingStart="@dimen/margin"
+        android:paddingTop="@dimen/margin">
+
+        <TextView
+            style="@style/Wide"
+            android:layout_marginBottom="@dimen/margin"
+            android:layout_marginTop="@dimen/margin"
+            android:text="@string/error_personal_data_uneditable"
+            android:textAlignment="center"
+            android:textColor="@color/black" />
+
+        <TextView
+            style="@style/Wrapped"
+            android:drawableLeft="@drawable/ic_call_black"
+            android:drawablePadding="@dimen/margin_half"
+            android:drawableStart="@drawable/ic_call_black"
+            android:onClick="@{() -> viewModel.goToDial(@string/phone_support_lifecell)}"
+            android:padding="@dimen/margin_half"
+            android:text="@string/phone_support_lifecell"
+            android:textAppearance="@android:style/TextAppearance"
+            android:textStyle="bold" />
+
+        <TextView
+            style="@style/Wrapped"
+            android:drawableLeft="@drawable/ic_call_black"
+            android:drawablePadding="@dimen/margin_half"
+            android:drawableStart="@drawable/ic_call_black"
+            android:onClick="@{() -> viewModel.goToDial(@string/phone_support_kyivstar)}"
+            android:padding="@dimen/margin_half"
+            android:text="@string/phone_support_kyivstar"
+            android:textAppearance="@android:style/TextAppearance"
+            android:textStyle="bold" />
+
+        <TextView
+            style="@style/Wrapped"
+            android:drawableLeft="@drawable/ic_call_black"
+            android:drawablePadding="@dimen/margin_half"
+            android:drawableStart="@drawable/ic_call_black"
+            android:onClick="@{() -> viewModel.goToDial(@string/phone_support_vodafone)}"
+            android:padding="@dimen/margin_half"
+            android:text="@string/phone_support_vodafone"
+            android:textAppearance="@android:style/TextAppearance"
+            android:textStyle="bold" />
+
+        <TextView
+            style="@style/Wrapped"
+            android:drawableLeft="@drawable/ic_call_black"
+            android:drawablePadding="@dimen/margin_half"
+            android:drawableStart="@drawable/ic_call_black"
+            android:onClick="@{() -> viewModel.goToDial(@string/phone_support)}"
+            android:padding="@dimen/margin_half"
+            android:text="@string/phone_support"
+            android:textAppearance="@android:style/TextAppearance"
+            android:textStyle="bold" />
+
+        <Button
+            style="@style/Wrapped.Ripple.Borderless"
+            android:layout_gravity="end"
+            android:onClick="@{() -> viewModel.dismiss()}"
+            android:text="@android:string/ok"
+            android:textColor="@color/colorAccent" />
+
+    </LinearLayout>
+
+</layout>

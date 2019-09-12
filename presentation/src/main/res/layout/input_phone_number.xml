@@ -1,0 +1,63 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="ua.mycredit.mycredit.ui.bases.input.FieldViewModel" />
+
+        <variable
+            name="viewModel"
+            type="FieldViewModel" />
+
+    </data>
+
+    <LinearLayout
+        style="@style/Wide.Indented"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/top_hint"
+            style="@style/Wide"
+            android:focusableInTouchMode="false"
+            android:paddingEnd="@dimen/margin_short"
+            android:paddingLeft="@dimen/margin_short"
+            android:paddingRight="@dimen/margin_short"
+            android:paddingStart="@dimen/margin_short"
+            android:textColorHint="@{viewModel.hasFocus ? @color/colorAccent : @color/gray_8F8F8F}"
+            android:textSize="12sp"
+            app:hintId="@{viewModel.hint}"
+            app:optional="@{viewModel.optional}"
+            tools:text="@string/hint_your_phone_number" />
+
+        <br.com.sapereaude.maskedEditText.MaskedEditText
+            android:id="@+id/maskedPhone"
+            style="@style/Wide"
+            android:backgroundTint="@{viewModel.error != 0 ? @color/red : viewModel.hasFocus ? @color/colorAccent : @color/gray }"
+            android:clickable="@{viewModel.clickable}"
+            android:enabled="@{viewModel.enabled}"
+            android:focusable="@{viewModel.focusable}"
+            android:hint="@string/hint_number"
+            android:inputType="phone"
+            android:onFocusChange="@{(v, hasFocus) -> hasFocus ? viewModel.onFocused() : viewModel.onFocusLost()}"
+            android:text="@={viewModel.input }"
+            android:typeface="monospace"
+            app:allowed_chars="1234567890+("
+            app:keep_hint="true"
+            app:mask="#######)###-##-##"
+            app:onEditorActionListener="@{(v, actionId, event) -> viewModel.onEditorAction(actionId)}"
+            app:requestFocus="@={viewModel.requestFocus}" />
+
+        <TextView
+            style="@style/Wide"
+            android:layout_marginLeft="@dimen/margin_short"
+            android:layout_marginStart="@dimen/margin_short"
+            android:focusableInTouchMode="false"
+            android:textColor="@color/red"
+            android:textSize="12sp"
+            app:textOrInvisible="@{viewModel.error}"
+            tools:text="Error" />
+
+    </LinearLayout>
+
+</layout>

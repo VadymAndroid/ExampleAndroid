@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+
+        <import type="ua.mycredit.mycredit.ui.profile.cards.CardsViewModel" />
+
+        <import type="ua.mycredit.mycredit.ui.profile.cards.CardsViewModel.Mode" />
+
+        <import type="ua.mycredit.mycredit.ui.bases.ListViewModel" />
+
+
+        <variable
+            name="viewModel"
+            type="CardsViewModel" />
+
+    </data>
+
+    <LinearLayout
+        style="@style/Wide"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <Button
+            style="@style/Wide.Indented"
+            android:layout_marginBottom="@dimen/margin_big"
+            android:layout_marginTop="@dimen/margin_big"
+            android:background="@{viewModel.checkedCard != null ? @drawable/bg_button_gradient_primary : @drawable/bg_gradient_disabled}"
+            android:enabled="@{viewModel.checkedCard != null}"
+            android:onClick="@{() -> viewModel.processSelectionFinished()}"
+            android:text="@string/select"
+            android:textColor="@color/white"
+            android:visibility="@{viewModel.mode == Mode.PICKER}" />
+
+        <Button
+            style="@style/Wrapped.Ripple"
+            android:drawableLeft="@drawable/ic_add_blue"
+            android:drawablePadding="@dimen/margin_middle"
+            android:drawableStart="@drawable/ic_add_blue"
+            android:onClick="@{() -> viewModel.addCard()}"
+            android:text="@string/add_card"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp" />
+
+        <TextView
+            style="@style/Wide"
+            android:layout_marginBottom="@dimen/margin_middle"
+            android:layout_marginTop="@dimen/margin"
+            android:text="@string/how_to_verify_card"
+            android:textAppearance="@android:style/TextAppearance.Medium" />
+
+        <TextView
+            style="@style/Wide"
+            android:layout_marginBottom="@dimen/margin_big"
+            app:htmlText="@{@string/how_to_verify_card_tutorial}"
+            tools:text="@string/how_to_verify_card_tutorial" />
+
+    </LinearLayout>
+
+</layout>

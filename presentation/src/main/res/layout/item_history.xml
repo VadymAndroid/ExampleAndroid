@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="ua.mycredit.mycredit.ui.profile.history.HistoryViewModel.LoanViewHolder" />
+
+        <import type="ua.mycredit.mycredit.mapping.CreditStatusKt" />
+
+        <import type="ua.mycredit.mycredit.ui.ExtensionsKt" />
+
+        <variable
+            name="viewModel"
+            type="LoanViewHolder" />
+    </data>
+
+    <android.support.v7.widget.CardView
+        style="@style/Wide"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="8dp"
+        app:cardUseCompatPadding="true"
+        app:contentPadding="@dimen/margin">
+
+        <LinearLayout
+            style="@style/Wide"
+            android:orientation="vertical">
+
+            <LinearLayout
+                style="@style/Wide"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:id="@+id/idTextView"
+                    style="@style/WeightedHorizontallyWrapped"
+                    android:layout_gravity="center"
+                    android:text="@{@string/string_number_pattern(viewModel.item.publicId)}"
+                    android:textAppearance="@style/NumberLabel" />
+
+
+                <TextView
+                    android:id="@+id/statusTextView"
+                    style="@style/Wrapped.RoundLabel"
+                    android:layout_gravity="end"
+                    android:gravity="center"
+                    android:textAppearance="@style/LoanStatusText"
+                    app:statusBadge="@{viewModel.item.status}" />
+
+
+            </LinearLayout>
+
+            <android.support.constraint.ConstraintLayout
+                style="@style/Wide"
+                android:layout_marginTop="@dimen/margin_big">
+
+                <LinearLayout
+                    android:id="@+id/dateLayout"
+                    style="@style/Wrapped.EndMargin"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/dateLabelTextView"
+                        style="@style/Wrapped"
+                        android:text="@string/loan_creation_date"
+                        android:textAppearance="@style/CalculatorInfo.Tiny" />
+
+                    <TextView
+                        android:id="@+id/dateTextView"
+                        style="@style/Wrapped"
+                        android:textAppearance="@style/LoanDateText"
+                        app:dateTime="@{viewModel.item.creationDate}"
+                        app:dateTimeStyle='@{"M-"}' />
+                </LinearLayout>
+
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="1dp"
+                    android:layout_height="0dp"
+                    android:background="@color/gray_1A000000"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/guideline2"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/deptLayout"
+                    style="@style/Wrapped.StartMargin"
+                    android:orientation="vertical"
+                    app:layout_constraintStart_toStartOf="@+id/guideline2"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/deptLabelTextView"
+                        style="@style/Wrapped"
+                        android:text="@string/loan_current_debt"
+                        android:textAppearance="@style/CalculatorInfo.Tiny" />
+
+                    <TextView
+                        android:id="@+id/deptTextView"
+                        style="@style/Wrapped"
+                        android:textAppearance="@style/LoanDeptText"
+                        app:amountWithCurrency="@{viewModel.item.currentDebt}" />
+
+                </LinearLayout>
+
+                <android.support.constraint.Guideline
+                    android:id="@+id/guideline2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                style="@style/Wide"
+                android:layout_marginTop="@dimen/margin">
+
+                <LinearLayout
+                    android:id="@+id/amountLayout"
+                    style="@style/Wrapped.EndMargin"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/amountLabelTextView"
+                        style="@style/Wrapped"
+                        android:text="@string/amount"
+                        android:textAppearance="@style/CalculatorInfo.Tiny" />
+
+                    <TextView
+                        android:id="@+id/amountTextView"
+                        style="@style/Wrapped"
+                        android:textAppearance="@style/LoanDateText"
+                        app:amountWithCurrency="@{viewModel.item.amount}" />
+
+                </LinearLayout>
+
+                <android.support.constraint.Guideline
+                    android:id="@+id/guideline3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <View
+                    android:id="@+id/separator"
+                    android:layout_width="1dp"
+                    android:layout_height="0dp"
+                    android:background="@color/gray_1A000000"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/guideline3"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/termLayout"
+                    style="@style/Wrapped.StartMargin"
+                    android:orientation="vertical"
+                    app:layout_constraintStart_toStartOf="@+id/guideline3"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/termLabelTextView"
+                        style="@style/Wrapped"
+                        android:text="@string/loan_term"
+                        android:textAppearance="@style/CalculatorInfo.Tiny" />
+
+                    <TextView
+                        android:id="@+id/termTextView"
+                        style="@style/Wrapped"
+                        android:text="@{@plurals/days(viewModel.item.term, viewModel.item.term)}"
+                        android:textAppearance="@style/LoanDateText" />
+
+                </LinearLayout>
+
+            </android.support.constraint.ConstraintLayout>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</layout>

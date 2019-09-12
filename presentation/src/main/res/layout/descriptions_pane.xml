@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="brief"
+            type="String" />
+
+        <variable
+            name="detail"
+            type="String" />
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        style="@style/Wide.Indented"
+        android:background="@drawable/bg_credit_status_controls_green"
+        android:padding="@dimen/margin_middle">
+
+        <ImageView
+            android:id="@+id/status_icon"
+            android:layout_width="@dimen/margin_huge"
+            android:layout_height="@dimen/margin_huge"
+            android:contentDescription="@null"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_credit_status_card_normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/brief_description"
+            style="@style/Wide"
+            android:layout_marginLeft="48dp"
+            android:layout_marginStart="48dp"
+            android:text="@{brief}"
+            android:textColor="@color/gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/status_icon"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/credit_status_detailed_description_no_credits" />
+
+        <ImageView
+            android:id="@+id/divider"
+            android:layout_width="0dp"
+            android:layout_height="5dp"
+            android:layout_marginLeft="@dimen/margin"
+            android:layout_marginStart="@dimen/margin"
+            android:layout_marginTop="@dimen/margin_half"
+            android:contentDescription="@null"
+            android:layerType="software"
+            android:src="@drawable/divider_dash_horizontal"
+            android:tint="@color/green"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/status_icon"
+            app:layout_constraintTop_toBottomOf="@+id/brief_description" />
+
+        <TextView
+            android:id="@+id/detailed_description"
+            style="@style/Wide"
+            android:layout_marginLeft="48dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="@dimen/margin_half"
+            android:text="@{detail}"
+            android:textColor="@color/gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/status_icon"
+            app:layout_constraintTop_toBottomOf="@id/divider"
+            tools:text="@string/credit_status_detailed_description_no_credits" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

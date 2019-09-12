@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+
+        <import type="ua.mycredit.mycredit.ui.profile.ProfileActivity" />
+
+        <import type="com.aurelhubert.ahbottomnavigation.AHBottomNavigation.TitleState" />
+
+        <variable
+            name="viewModel"
+            type="ProfileActivity" />
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/messenger"
+            style="@style/Wrapped"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:onClick="@{() -> viewModel.openFacebookChat()}"
+            android:src="@drawable/messenger"
+            android:visibility="invisible"
+            app:backgroundTint="@color/messenger"
+            app:layout_constraintBottom_toTopOf="@+id/chatList"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:showHideButtonChat="@{viewModel.chatHideOrOpen}"
+            tools:ignore="MissingConstraints" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/viber"
+            style="@style/Wrapped"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:onClick="@{() -> viewModel.openViberChat()}"
+            android:src="@drawable/viber"
+            android:visibility="invisible"
+            app:backgroundTint="@color/def_wheel_color"
+            app:layout_constraintBottom_toTopOf="@+id/messenger"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:showHideButtonChat="@{viewModel.chatHideOrOpen}"
+            tools:ignore="MissingConstraints" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/telegram"
+            style="@style/Wrapped"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:onClick="@{() -> viewModel.openTelegramChat()}"
+            android:src="@drawable/telegram"
+            android:visibility="invisible"
+            app:backgroundTint="@color/calculator_money_dark"
+            app:layout_constraintBottom_toTopOf="@+id/viber"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:showHideButtonChat="@{viewModel.chatHideOrOpen}"
+            tools:ignore="MissingConstraints" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/chatList"
+            style="@style/Wrapped"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="96dp"
+            android:onClick="@{() -> viewModel.pickMessageMyCreditTeam()}"
+            android:src="@drawable/chat"
+            app:backgroundTint="@color/browser_actions_bg_grey"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:openCloseChatAnimation="@{viewModel.chatHideOrOpen}"
+            tools:ignore="MissingConstraints" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            style="@style/Fill"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <android.support.design.widget.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/toolbarButton"
+                    style="@style/ToolbarFont"
+                    android:background="@drawable/bg_gradient_primary"
+                    android:clickable="false"
+                    android:onClick="@{() -> viewModel.pickCreditStatus()}"
+                    android:text="@{viewModel.toolbarTitle}"
+                    android:textAllCaps="false" />
+
+            </android.support.design.widget.AppBarLayout>
+
+
+            <com.aurelhubert.ahbottomnavigation.AHBottomNavigationViewPager
+                android:id="@+id/fragmentViewPager"
+                style="@style/WeightedVertically"
+                app:adapter="@{viewModel.pagerAdapter}"
+                app:currentItem="@={viewModel.currentItem}"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                app:offscreenPageLimit="@{viewModel.pagerAdapter.count}" />
+
+            <com.aurelhubert.ahbottomnavigation.AHBottomNavigation
+                android:id="@+id/bottomNavigationView"
+                style="@style/Wide"
+                app:accentColor="@{@color/colorPrimary}"
+                app:adapter="@{viewModel.navigationMenuAdapter}"
+                app:onTabSelectedListener="@{(position, wasSelected) -> viewModel.onTabSelected(position)}"
+                app:titleState="@{TitleState.ALWAYS_SHOW}" />
+
+        </LinearLayout>
+    </android.support.constraint.ConstraintLayout>
+</layout>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+
+        <import type="ua.mycredit.mycredit.ui.profile.profile.ProlongationPreferencesViewModel" />
+
+        <import type="ua.mycredit.mycredit.ui.ExtensionsKt" />
+
+        <variable
+            name="viewModel"
+            type="ProlongationPreferencesViewModel" />
+    </data>
+
+    <LinearLayout
+        style="@style/Fill"
+        android:background="#F7FAFC"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title_final_date_selection"
+            style="@style/Wrapped"
+            android:layout_marginTop="@dimen/margin_big"
+            android:text="@string/final_date_selection"
+            android:textAppearance="@android:style/TextAppearance.Medium"
+            android:textColor="#4C4D4D"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            style="@style/Wrapped.Ripple.Borderless"
+            android:layout_marginBottom="@dimen/margin_big"
+            android:layout_marginTop="@dimen/margin_big"
+            android:background="@drawable/bg_button_gradient_primary"
+            android:onClick="@{() -> viewModel.pickFinishDay()}"
+            android:paddingEnd="@dimen/margin_huge"
+            android:paddingStart="@dimen/margin_huge"
+            android:text='@{@string/before_pattern(ExtensionsKt.printByStyle(viewModel.date, "S-"))}'
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_final_date_selection"
+            app:layout_constraintWidth_percent="0.7"
+            tools:text="@string/before_pattern" />
+
+        <FrameLayout style="@style/Wide">
+
+            <include
+                layout="@layout/descriptions_pane"
+                app:brief="@{@string/prolongation_brief_description(viewModel.storage.profile.name)}"
+                app:detail='@{@string/prolongation_detail_description(ExtensionsKt.printByStyle(viewModel.date, "S-"))}' />
+
+        </FrameLayout>
+
+        <Button
+            style="@style/Wide.Indented.Ripple.Borderless"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="@dimen/margin_big"
+            android:background="@drawable/bg_button_gradient_primary_accent"
+            android:onClick="@{() -> viewModel.prolong()}"
+            android:text="@string/prolong"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+</layout>

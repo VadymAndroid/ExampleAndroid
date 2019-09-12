@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="ua.mycredit.mycredit.ui.profile.cards.CardSmsConfirmationViewModel" />
+
+        <variable
+            name="viewModel"
+            type="CardSmsConfirmationViewModel" />
+
+    </data>
+
+    <android.support.v7.widget.CardView
+        style="@style/Wide.Indented.VerticalMargin"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="8dp"
+        app:cardUseCompatPadding="true"
+        app:contentPadding="@dimen/margin_big">
+
+        <LinearLayout
+            style="@style/Wide"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/Wide"
+                android:text="@string/card_confirmation"
+                android:textAppearance="@android:style/TextAppearance.Medium" />
+
+            <TextView
+                style="@style/Wide"
+                android:layout_marginTop="@dimen/margin_half"
+                android:text="@string/card_confirmation_tutorial"
+                android:textSize="16sp"
+                tools:text="text" />
+
+            <include
+                layout="@layout/input_field"
+                app:viewModel="@{viewModel.code}" />
+
+            <TextView
+                style="@style/Wide"
+                android:onClick="@{() -> viewModel.showContactSupportAlert()}"
+                android:text="@string/no_bank_sms_question"
+                android:textColor="@color/colorAccent" />
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</layout>

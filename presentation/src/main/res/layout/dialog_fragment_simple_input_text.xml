@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+
+        <import type="ua.mycredit.mycredit.ui.bases.SimpleInputTextDialogFragment" />
+
+        <variable
+            name="viewModel"
+            type="SimpleInputTextDialogFragment" />
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        style="@style/Wide"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/Wide.Indented"
+            android:layout_marginTop="@dimen/margin"
+            android:text="@{viewModel.titleId}"
+            android:textAppearance="@android:style/TextAppearance.Large"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Title" />
+
+        <include
+            android:id="@+id/include"
+            style="@style/Wide.Indented"
+            layout="@layout/input_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title"
+            app:viewModel="@{viewModel.field}" />
+
+        <Button
+            style="@style/Wrapped.Ripple.Borderless"
+            android:onClick="@{() -> viewModel.dismiss()}"
+            android:text="@android:string/cancel"
+            android:textColor="@color/colorAccent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/ok" />
+
+        <Button
+            android:id="@+id/ok"
+            style="@style/Wrapped.Ripple.Borderless"
+            android:onClick="@{() -> viewModel.tryToComplete()}"
+            android:text="@android:string/ok"
+            android:textColor="@color/colorAccent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/include" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

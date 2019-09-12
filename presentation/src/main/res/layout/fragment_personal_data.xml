@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="ua.mycredit.mycredit.ui.authentication.registration.passport.personal.PersonalDataViewModel" />
+
+        <variable
+            name="viewModel"
+            type="PersonalDataViewModel" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/margin">
+
+        <TextView
+            style="@style/SignUpText.Header"
+            android:text="@string/passport_data" />
+
+        <TextView
+            style="@style/SignUpText.Title"
+            android:text="@string/main_data" />
+
+        <include
+            layout="@layout/input_field_hint_static"
+            app:hintStatic="@{@string/hint_surname}"
+            app:viewModel="@{viewModel.surname}" />
+
+        <include
+            layout="@layout/input_field_hint_static"
+            app:hintStatic="@{@string/hint_name}"
+            app:viewModel="@{viewModel.name}" />
+
+        <include
+            layout="@layout/input_field_hint_static"
+            app:hintStatic="@{@string/hint_patronymic}"
+            app:viewModel="@{viewModel.patronymic}" />
+
+        <include
+            layout="@layout/input_field"
+            app:drawableEnd="@{@drawable/ic_arrow_drop_down_selector}"
+            app:viewModel="@{viewModel.birthDay}" />
+
+        <include
+            layout="@layout/input_field"
+            app:viewModel="@{viewModel.tin}" />
+
+    </LinearLayout>
+
+</layout>

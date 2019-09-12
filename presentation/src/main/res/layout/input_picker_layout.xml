@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View.OnClickListener" />
+
+        <variable
+            name="title"
+            type="int" />
+
+        <variable
+            name="hintRes"
+            type="int" />
+
+        <variable
+            name="value"
+            type="String" />
+
+        <variable
+            name="titleIndex"
+            type="int" />
+
+        <variable
+            name="titlesRes"
+            type="int" />
+
+        <variable
+            name="error"
+            type="boolean" />
+
+        <variable
+            name="onClick"
+            type="OnClickListener" />
+
+    </data>
+
+    <LinearLayout
+        style="@style/Wide.Indented"
+        android:gravity="center_vertical"
+        android:onClick="@{onClick}"
+        android:paddingBottom="@dimen/margin"
+        android:paddingTop="@dimen/margin">
+
+        <TextView
+            style="@style/Wrapped"
+            android:text="@{title, default = Должность}"
+            android:textColor="@color/gray"
+            android:textSize="16sp"
+            app:fontFamily="@string/font_family_medium" />
+
+        <TextView
+            style="@style/WeightedHorizontallyWrapped"
+            android:layout_marginEnd="@dimen/margin_half"
+            android:layout_marginStart="@dimen/margin_half"
+            android:ellipsize="end"
+            android:gravity="end"
+            android:hint="@{hintRes, default = Выберите}"
+            android:lines="1"
+            android:textColorHint="@{error ? @color/red : @color/gray_8F8F8F}"
+            android:textSize="16sp"
+            app:text="@{value}"
+            app:titleIndex="@{titleIndex}"
+            app:titlesRes="@{titlesRes}"
+            tools:text="Выберите" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_arrow_right_gray"
+            tools:ignore="ContentDescription" />
+
+    </LinearLayout>
+
+</layout>

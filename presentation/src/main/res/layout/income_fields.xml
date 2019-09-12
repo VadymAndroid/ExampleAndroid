@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+
+        <import type="ua.mycredit.mycredit.ui.authentication.registration.ocupation.OccupationTypeViewModel" />
+
+        <import type="android.view.View" />
+
+        <import type="ua.mycredit.core.IncomeMainSource" />
+
+        <import type="ua.mycredit.core.OccupationType" />
+
+        <import type="ua.mycredit.core.ParamsRequirements" />
+
+        <import type="ua.mycredit.mycredit.R" />
+
+
+        <variable
+            name="viewModel"
+            type="OccupationTypeViewModel" />
+
+    </data>
+
+    <LinearLayout
+        style="@style/Fill"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.CardView
+            style="@style/Wide"
+            android:layout_marginBottom="@dimen/margin_short"
+            app:cardElevation="@dimen/shadow_small">
+
+            <LinearLayout
+                style="@style/Wide"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/SignUpText.Header"
+                    android:layout_margin="@dimen/margin"
+                    android:text="@string/occupation" />
+
+                <include
+                    layout="@layout/input_picker_layout"
+                    app:hintRes="@{R.string.hint_select}"
+                    app:onClick="@{() -> viewModel.changeOccupationType()}"
+                    app:title="@{R.string.occupation_type}"
+                    app:titleIndex="@{viewModel.titleIndex}"
+                    app:titlesRes="@{viewModel.titlesRes}" />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            style="@style/Wide"
+            android:layout_marginTop="@dimen/margin_short"
+            app:cardElevation="@dimen/shadow_small">
+
+            <LinearLayout
+                style="@style/Wide"
+                android:orientation="vertical">
+
+                <include
+                    layout="@layout/input_variant_picker"
+                    app:viewModel="@{viewModel.incomeMainSource}" />
+
+                <include
+                    layout="@layout/input_text_picker"
+                    android:visibility="@{viewModel.paramsRequirements.withCompany ? View.VISIBLE : View.GONE}"
+                    app:viewModel="@{viewModel.companyName}" />
+
+                <include
+                    layout="@layout/input_variant_picker"
+                    android:visibility="@{viewModel.paramsRequirements.withActivity ? View.VISIBLE : View.GONE}"
+                    app:viewModel="@{viewModel.activityKind}" />
+
+                <include
+                    layout="@layout/input_variant_picker"
+                    android:visibility="@{viewModel.paramsRequirements.withCompany? View.VISIBLE : View.GONE}"
+                    app:viewModel="@{viewModel.position}" />
+
+                <include
+                    layout="@layout/input_text_picker"
+                    android:visibility="@{viewModel.paramsRequirements.withCompany? View.VISIBLE : View.GONE}"
+                    app:viewModel="@{viewModel.workPhone}" />
+
+                <include
+                    layout="@layout/input_text_picker"
+                    android:visibility="@{viewModel.paramsRequirements.withMonthlyIncome ? View.VISIBLE : View.GONE}"
+                    app:viewModel="@{viewModel.monthlyIncome}" />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+</layout>

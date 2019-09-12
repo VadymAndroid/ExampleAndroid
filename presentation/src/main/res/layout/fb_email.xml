@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="ua.mycredit.mycredit.ui.delegates.FbEmail" />
+
+        <variable
+            name="viewModel"
+            type="FbEmail" />
+
+    </data>
+
+    <LinearLayout
+        style="@style/Wide"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/email"
+            layout="@layout/input_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/screen_horizontal_margin"
+            android:layout_marginRight="@dimen/screen_horizontal_margin"
+            android:layout_marginTop="@dimen/margin"
+            app:viewModel="@{viewModel.email}" />
+
+        <Button
+            android:id="@+id/loginButton"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="@dimen/screen_horizontal_margin"
+            android:layout_marginRight="@dimen/screen_horizontal_margin"
+            android:drawableLeft="@{@drawable/ic_fb}"
+            android:drawableStart="@{@drawable/ic_fb}"
+            android:onClick="@{() -> viewModel.logInWithFb()}"
+            android:text="@string/email_with_facebook"
+            android:textAllCaps="false"
+            android:theme="@style/AppTheme.FaceBookAccent" />
+
+        <TextView
+            android:id="@+id/facebook_desc"
+            style="@style/Wide.Indented"
+            android:layout_marginBottom="@dimen/margin"
+            android:layout_marginTop="@dimen/margin"
+            android:background="@drawable/bg_dotted"
+            android:padding="@dimen/margin_middle"
+            android:text="@string/facebook_desc"
+            android:textColor="@color/gray_CBCBCB" />
+    </LinearLayout>
+</layout>

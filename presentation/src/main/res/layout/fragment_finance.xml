@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="ua.mycredit.mycredit.ui.authentication.registration.finance.FinanceViewModel" />
+
+        <variable
+            name="viewModel"
+            type="FinanceViewModel" />
+
+    </data>
+
+    <LinearLayout
+        style="@style/Fill"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.CardView
+            style="@style/Wide"
+            app:cardElevation="@dimen/shadow_small">
+
+            <LinearLayout
+                style="@style/Fill"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/SignUpText.Header"
+                    android:layout_marginBottom="@dimen/margin"
+                    android:layout_marginTop="@dimen/margin"
+                    android:text="@string/finance_info" />
+
+                <include
+                    layout="@layout/input_variant_picker"
+                    app:viewModel="@{viewModel.familyExpenses}" />
+
+                <include
+                    layout="@layout/input_variant_picker"
+                    app:viewModel="@{viewModel.paymentsAmountOnLoans}" />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_half"
+            android:background="@color/activity_background" />
+
+        <android.support.v7.widget.CardView
+            style="@style/Wide"
+            app:cardElevation="@dimen/shadow_small">
+
+            <LinearLayout
+                style="@style/Fill"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/SignUpText.Header"
+                    android:layout_marginBottom="@dimen/margin"
+                    android:layout_marginTop="@dimen/margin"
+                    android:text="@string/result" />
+
+                <include
+                    layout="@layout/input_variant_picker"
+                    app:viewModel="@{viewModel.loanPurpose}" />
+
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/mailSubscription"
+                    style="@style/CheckBox"
+                    android:layout_marginTop="48dp"
+                    android:checked="@={viewModel.mailSubscription}"
+                    android:text="@string/get_news_from_my_credit" />
+
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/dataProcessAllowed"
+                    style="@style/CheckBox"
+                    android:checked="@={viewModel.dataProcessAllowed}"
+                    android:enabled="@{viewModel.profile.signUpFlow || !viewModel.dataProcessAllowed}"
+                    android:onCheckedChanged="@{(b, checked) -> viewModel.processDataProcessAllowedChanged()}"
+                    android:text="@string/data_process_allowed"
+                    app:textColorResource="@{viewModel.dataProcessTextColorRes}" />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+</layout>

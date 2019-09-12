@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="ua.mycredit.mycredit.ui.profile.profile.ProfileViewModel" />
+
+        <import type="ua.mycredit.mycredit.Screens" />
+
+        <import type="ua.mycredit.mycredit.R" />
+
+        <variable
+            name="viewModel"
+            type="ProfileViewModel" />
+    </data>
+
+    <android.support.v4.widget.NestedScrollView style="@style/Fill">
+
+        <LinearLayout
+            style="@style/Wide"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.CardView style="@style/Wide">
+
+                <LinearLayout
+                    style="@style/Wide"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/SignUpText.Header"
+                        android:layout_marginBottom="@dimen/margin"
+                        android:layout_marginTop="@dimen/margin"
+                        android:text="@string/profile_my_details" />
+
+                    <include
+                        layout="@layout/item_detail_section"
+                        app:isValid="@{true}"
+                        app:onClick='@{() -> viewModel.router.navigateTo(Screens.Profile.Contacts.CONTACTS)}'
+                        app:titleRes="@{R.string.contact_data}" />
+
+                    <include
+                        layout="@layout/item_detail_section"
+                        app:isValid="@{viewModel.personalValid}"
+                        app:onClick="@{() -> viewModel.onDetails(Screens.Profile.DETAILS_PERSONAL)}"
+                        app:titleRes="@{R.string.personal_data}" />
+
+                    <include
+                        layout="@layout/item_detail_section"
+                        app:isValid="@{viewModel.occupationValid}"
+                        app:onClick="@{() -> viewModel.onDetails(Screens.Profile.DETAILS_OCCUPATION)}"
+                        app:titleRes="@{R.string.occupation}" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                style="@style/Wide"
+                android:layout_marginTop="@dimen/margin_middle">
+
+                <LinearLayout
+                    style="@style/Wide"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/ProfileQuestionText"
+                        android:onClick="@{() -> viewModel.router.navigateTo(Screens.Profile.FAQ)}"
+                        android:text="@string/top_ten_questions"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        style="@style/ProfileQuestionText"
+                        android:onClick="@{() -> viewModel.router.navigateTo(Screens.Profile.FAQ_WEB)}"
+                        android:text="@string/more_questions" />
+
+                    <TextView
+                        style="@style/ProfileQuestionText"
+                        android:onClick="@{() -> viewModel.router.navigateTo(Screens.Profile.FAQ_WEB_PP)}"
+                        android:text="@string/profile_app_details" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <TextView
+                style="@style/LogoutText"
+                android:layout_marginTop="@dimen/margin"
+                android:onClick="@{() -> viewModel.logout()}"
+                android:text="@string/logout_from_cabinet" />
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+</layout>

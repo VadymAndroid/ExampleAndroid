@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="ua.mycredit.mycredit.ui.authentication.registration.phone.SignUpPhoneViewModel" />
+
+        <import type="ua.mycredit.mycredit.ui.authentication.registration.phone.SignUpPhoneViewModel.State" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="SignUpPhoneViewModel" />
+
+    </data>
+
+    <RelativeLayout style="@style/Wide.Indented">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/phoneContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="1dp"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/margin_big">
+
+                <TextView
+                    android:id="@+id/phoneTitle"
+                    style="@android:style/TextAppearance.Medium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_half"
+                    android:gravity="center"
+                    android:textColor="@{viewModel.state.titleColor}"
+                    app:textOrGone="@{viewModel.state.title}"
+                    tools:visibility="gone" />
+
+                <include
+                    layout="@layout/input_phone_number"
+                    app:viewModel="@{viewModel.phone}" />
+
+                <include
+                    layout="@layout/input_field"
+                    android:visibility="@{viewModel.state == State.DEFAULT ? View.GONE : View.VISIBLE}"
+                    app:viewModel="@{viewModel.password}" />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <TextView
+            android:id="@+id/enterOtherNumber"
+            style="@style/Ripple"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/phoneContainer"
+            android:onClick="@{() -> viewModel.resetState(State.DEFAULT)}"
+            android:padding="@dimen/margin"
+            android:text="@string/enter_other_number"
+            android:textColor="@color/colorAccent"
+            android:visibility="@{viewModel.state == State.ALREADY_REGISTERED}" />
+
+        <TextView
+            android:id="@+id/forgotPassword"
+            style="@style/Ripple"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/phoneContainer"
+            android:onClick="@{() -> viewModel.forgotPassword()}"
+            android:padding="@dimen/margin"
+            android:text="@string/forgot_password"
+            android:textColor="@color/colorAccent"
+            android:visibility="@{viewModel.state == State.ALREADY_REGISTERED}" />
+
+    </RelativeLayout>
+</layout>

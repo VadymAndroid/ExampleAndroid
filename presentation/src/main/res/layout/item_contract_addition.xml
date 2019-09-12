@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="ua.mycredit.mycredit.ui.profile.credit.StatusViewModel.ContractAdditionsAdapter.ItemViewHolderImpl" />
+
+        <import type="ua.mycredit.mycredit.mapping.ContractAdditionsKt" />
+
+        <import type="ua.mycredit.core.Prolongation" />
+
+        <import type="ua.mycredit.core.ContractAddition" />
+
+        <variable
+            name="viewModel"
+            type="ItemViewHolderImpl" />
+
+    </data>
+
+    <ViewSwitcher
+        style="@style/Wide"
+        android:layout_marginBottom="@dimen/margin_short"
+        android:layout_marginTop="@dimen/margin_short"
+        app:displayedChild="@{viewModel.item instanceof Prolongation ? 0 : 1}">
+
+        <Button
+            style="@style/Wide.Ripple"
+            android:onClick="@{() -> viewModel.apply()}"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:prolongationParams="@{(viewModel.item instanceof Prolongation) ? (Prolongation) viewModel.item : null}" />
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> viewModel.expand()}"
+            app:cardCornerRadius="2dp"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@{viewModel.expanded ? @drawable/bg_gradient_primary : @drawable/white}"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/promo_size"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textAllCaps="true"
+                        android:textColor="@{viewModel.expanded ? @color/white : @color/black}"
+                        android:textSize="16sp"
+                        app:contractAdditionTitle="@{viewModel.item}"
+                        app:fontFamily="@string/font_family_medium"
+                        tools:text="Продлить на 30 дней" />
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="@dimen/promo_size"
+                        android:layout_height="@dimen/promo_size"
+                        android:background="@drawable/bg_dotted_round_accent"
+                        android:gravity="center"
+                        android:textSize="12sp"
+                        android:text="@{@string/specific_uah_d(viewModel.item.discount)}"
+                        android:textColor="@color/white"
+                        android:visibility="@{viewModel.item.discount != 0}"
+                        tools:text="-30%" />
+
+                </LinearLayout>
+
+                <net.cachapa.expandablelayout.ExpandableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:expanded="@{viewModel.expanded, default=true}">
+
+                    <android.support.constraint.ConstraintLayout
+                        android:id="@+id/constraintLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="170dp"
+                        android:paddingTop="@dimen/margin_middle">
+
+                        <View
+                            android:id="@+id/textView4"
+                            android:layout_width="1dp"
+                            android:layout_height="0dp"
+                            android:background="@color/white"
+                            android:visibility="gone"
+                            app:layout_constraintBottom_toBottomOf="@+id/textView5"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/textView5" />
+
+                        <TextView
+                            android:id="@+id/textView5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/margin_half"
+                            android:layout_marginRight="@dimen/margin_half"
+                            android:gravity="center"
+                            android:text="@string/you_save_uah"
+                            android:textColor="@color/white"
+                            android:visibility="gone"
+                            app:layout_constraintEnd_toStartOf="@+id/textView4"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/textView6"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/margin_half"
+                            android:layout_marginStart="@dimen/margin_half"
+                            android:gravity="center"
+                            android:text="@string/sum_uah"
+                            android:textColor="@color/white"
+                            android:visibility="gone"
+                            app:layout_constraintBottom_toBottomOf="@id/textView5"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/textView4"
+                            app:layout_constraintTop_toTopOf="@+id/textView5" />
+
+                        <CheckBox
+                            android:id="@+id/terms_of_contract"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/margin"
+                            android:checked="@={viewModel.agreed}"
+                            android:paddingEnd="@dimen/margin_half"
+                            android:paddingLeft="@dimen/margin_half"
+                            android:paddingRight="@dimen/margin_half"
+                            android:paddingStart="@dimen/margin_half"
+                            android:paddingTop="@dimen/margin_half"
+                            android:textColor="@color/white"
+                            app:buttonTint="@color/white"
+                            app:clickableText="@{@string/agree_with_terms_of_contract_clickable}"
+                            app:highlightClick="@{() -> viewModel.goToRestructuringAgreement()}"
+                            app:highlightColor="@{@color/white}"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textView5"
+                            app:plainText="@{@string/agree_with_terms_of_contract_plain}"
+                            app:underline="@{true}" />
+
+                        <Button
+                            android:id="@+id/button2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin"
+                            android:background="@drawable/bg_ripple_primary_dark"
+                            android:enabled="@{viewModel.agreed}"
+                            android:onClick="@{() -> viewModel.apply()}"
+                            android:text="@{ContractAdditionsKt.getActionButtonTitle(viewModel.item)}"
+                            android:textColor="@{viewModel.agreed ? @color/white : @color/disabled}"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                    </android.support.constraint.ConstraintLayout>
+
+                </net.cachapa.expandablelayout.ExpandableLayout>
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+    </ViewSwitcher>
+</layout>

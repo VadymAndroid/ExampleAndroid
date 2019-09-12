@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/action_credit"
+        android:icon="@drawable/ic_money_profile"
+        android:title="@string/credit" />
+
+    <item
+        android:id="@+id/action_history"
+        android:icon="@drawable/ic_history_profile"
+        android:title="@string/credits_history" />
+
+    <item
+        android:id="@+id/action_profile"
+        android:icon="@drawable/ic_profile_profile"
+        android:title="@string/profile" />
+
+    <item
+        android:id="@+id/action_my_cards"
+        android:icon="@drawable/ic_credit_profile"
+        android:title="@string/my_cards" />
+
+</menu>

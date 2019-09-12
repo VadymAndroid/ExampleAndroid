@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list>
+    <item xmlns:android="http://schemas.android.com/apk/res/android"
+        android:bottom="@dimen/sign_up_progress_size"
+        android:left="@dimen/sign_up_progress_size"
+        android:right="@dimen/sign_up_progress_size"
+        android:top="@dimen/sign_up_progress_size">
+        <shape
+            android:shape="oval"
+            android:tint="@color/white">
+            <size
+                android:width="@dimen/sign_up_tick_size"
+                android:height="@dimen/sign_up_tick_size" />
+            <solid android:color="@color/white" />
+        </shape>
+    </item>
+</layer-list>

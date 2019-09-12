@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="ua.mycredit.mycredit.ui.bases.input.FieldViewModel" />
+
+        <import type="ua.mycredit.mycredit.ui.bases.input.FieldViewModel.State" />
+
+        <import type="android.graphics.drawable.Drawable" />
+
+        <import type="android.databinding.adapters.TextViewBindingAdapter.AfterTextChanged" />
+
+        <variable
+            name="viewModel"
+            type="FieldViewModel" />
+
+        <variable
+            name="drawableStart"
+            type="Drawable" />
+
+        <variable
+            name="drawableEnd"
+            type="Drawable" />
+
+        <variable
+            name="afterTextChanged"
+            type="AfterTextChanged" />
+
+    </data>
+
+    <android.support.design.widget.TextInputLayout
+        style="@style/Wide.Indented"
+        android:layout_gravity="center"
+        app:counterEnabled="@{viewModel.counterEnabled}"
+        app:counterMaxLength="@{viewModel.maxLength}"
+        app:error="@{viewModel.error}"
+        app:errorEnabled="true"
+        app:hintEnabled="@{!viewModel.hintStatic}"
+        app:hintId="@{viewModel.hint}"
+        app:inputType="@{viewModel.inputType}"
+        app:optional="@{viewModel.optional}"
+        app:passwordToggleEnabled="@{true}"
+        app:errorTextAppearance="@style/ErrorTextAppearance"
+        tools:hint="Hint *">
+
+        <!--suppress AndroidUnknownAttribute -->
+        <!-- TextInputEditText not works correctly on the Meizu devices -->
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/edit_text"
+            style="@style/Wide"
+            android:afterTextChanged="@{afterTextChanged}"
+            android:clickable="@{viewModel.clickable}"
+            android:drawableEnd="@{drawableEnd}"
+            android:drawableLeft="@{drawableEnd}"
+            android:drawablePadding="@dimen/margin_short"
+            android:drawableRight="@{drawableStart}"
+            android:drawableStart="@{drawableStart}"
+            android:enabled="@{viewModel.enabled}"
+            android:focusable="@{viewModel.focusable}"
+            android:gravity="top"
+            android:onClick="@{() -> viewModel.onClick()}"
+            android:onFocusChange="@{(v, hasFocus) -> hasFocus ? viewModel.onFocused() : viewModel.onFocusLost()}"
+            android:text="@={viewModel.input}"
+            app:filters="@{viewModel.filters}"
+            app:gravity="@{viewModel.gravity}"
+            app:hintId="@{viewModel.hintStatic ? viewModel.hint : 0}"
+            app:maxLines="@{viewModel.maxLines}"
+            app:minLines="@{viewModel.minLines}"
+            app:moveCursorToEnd="@={viewModel.moveCursorToEnd}"
+            app:onEditorActionListener="@{(v, actionId, event) -> viewModel.onEditorAction(actionId)}"
+            app:optional="@{true}"
+            app:requestFocus="@={viewModel.requestFocus}" />
+
+    </android.support.design.widget.TextInputLayout>
+
+</layout>

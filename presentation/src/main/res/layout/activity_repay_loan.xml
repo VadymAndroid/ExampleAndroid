@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="ua.mycredit.mycredit.ui.profile.repayloan.RepayLoanActivity" />
+
+        <import type="ua.mycredit.mycredit.ui.profile.repayloan.RepayLoanActivity.Page" />
+
+        <import type="ua.mycredit.mycredit.ui.profile.repayloan.RepaymentType" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="RepayLoanActivity" />
+
+    </data>
+
+    <android.support.design.widget.CoordinatorLayout style="@style/Fill">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appBar"
+            style="@style/Wide"
+            android:background="@color/white"
+            app:elevation="0dp">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@drawable/bg_gradient_primary"
+                android:theme="@style/AppTheme.PopupOverlay"
+                app:layout_scrollFlags="scroll|snap"
+                app:navigationIcon="?attr/homeAsUpIndicator"
+                app:navigationOnClickListener="@{() -> viewModel.onBackPressed()}"
+                app:title="@{viewModel.repaymentType.title}" />
+
+            <TextView
+                android:id="@+id/choose_payment_method"
+                style="@style/Wide"
+                android:layout_below="@id/appBar"
+                android:layout_marginBottom="@dimen/margin_big"
+                android:layout_marginLeft="@dimen/margin"
+                android:layout_marginStart="@dimen/margin"
+                android:layout_marginTop="@dimen/margin_big"
+                android:text="@string/choose_payout_method"
+                android:textColor="@color/gray_4C4D4D"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_scrollFlags="scroll|snap" />
+
+            <LinearLayout
+                android:id="@+id/tabs"
+                style="@style/Wide"
+                android:layout_below="@id/choose_payment_method"
+                android:baselineAligned="false"
+                android:orientation="horizontal"
+                app:layout_scrollFlags="enterAlways">
+
+                <include
+                    layout="@layout/simple_button"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/button_height"
+                    android:layout_weight="1"
+                    android:text="@{@stringArray/repay_loan_tabs[Page.CARD.ordinal]}"
+                    app:onClick="@{()-> viewModel.onTabClick(Page.CARD)}"
+                    app:primary="@{viewModel.page == Page.CARD}" />
+
+                <include
+                    layout="@layout/simple_button"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/button_height"
+                    android:layout_marginEnd="@dimen/margin_half"
+                    android:layout_marginLeft="@dimen/margin_half"
+                    android:layout_marginRight="@dimen/margin_half"
+                    android:layout_marginStart="@dimen/margin_half"
+                    android:layout_weight="1"
+                    android:text="@{@stringArray/repay_loan_tabs[Page.BANK.ordinal]}"
+                    app:onClick="@{()-> viewModel.onTabClick(Page.BANK)}"
+                    app:primary="@{viewModel.page == Page.BANK}" />
+
+                <include
+                    layout="@layout/simple_button"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/button_height"
+                    android:layout_weight="1"
+                    android:text="@{@stringArray/repay_loan_tabs[Page.TERMINAL.ordinal]}"
+                    app:onClick="@{()-> viewModel.onTabClick(Page.TERMINAL)}"
+                    app:primary="@{viewModel.page == Page.TERMINAL}" />
+
+            </LinearLayout>
+
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewPagerRepay"
+            style="@style/Fill"
+            app:adapter="@{viewModel.pagerAdapter}"
+            app:currentItem="@{viewModel.page.get().ordinal}"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:onPageChangeListener="@{viewModel.onPageChangeListener}" />
+
+        <Button
+            android:id="@+id/bottomButton"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_big"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="0dp"
+            android:background="@drawable/bg_gradient_accent"
+            android:onClick="@{() -> viewModel.openPaymentScreen()}"
+            android:text="@string/pay"
+            android:textColor="@color/white"
+            android:visibility="@{viewModel.page == Page.CARD}" />
+
+    </android.support.design.widget.CoordinatorLayout>
+</layout>

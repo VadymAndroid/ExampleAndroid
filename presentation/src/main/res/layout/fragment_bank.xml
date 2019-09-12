@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="ua.mycredit.mycredit.ui.profile.repayloan.BankFragmentViewModel" />
+
+        <variable
+            name="viewModel"
+            type="BankFragmentViewModel" />
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        style="@style/Wide"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/topBankText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin"
+            android:layout_marginLeft="@dimen/margin"
+            android:layout_marginRight="@dimen/margin"
+            android:layout_marginStart="@dimen/margin"
+            android:layout_marginTop="@dimen/margin"
+            android:text="@string/bank_fragment_top_text"
+            android:textColor="@color/gray_alpha_80_4C4D4D"
+            android:textSize="@dimen/text_small"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/topDivider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/margin"
+            android:background="@color/gray_alpha_10_000000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/topBankText" />
+
+        <View
+            android:id="@+id/payoutBlockBackground"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/blue_F7FAFC"
+            app:layout_constraintBottom_toBottomOf="@id/bottomDivider"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/topDivider" />
+
+        <TextView
+            android:id="@+id/receiver"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin"
+            android:layout_marginStart="@dimen/margin"
+            android:layout_marginTop="@dimen/margin_middle"
+            android:text="@string/receiver"
+            android:textColor="@color/gray_4C4D4D"
+            android:textSize="@dimen/text_small"
+            app:fontFamily="@string/font_family_medium"
+            app:layout_constraintStart_toStartOf="@id/payoutBlockBackground"
+            app:layout_constraintTop_toTopOf="@id/payoutBlockBackground" />
+
+        <TextView
+            android:id="@+id/receiverFullName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_half"
+            android:text="@string/my_credit_ooo_name"
+            android:textSize="@dimen/text_middle"
+            app:layout_constraintStart_toStartOf="@id/receiver"
+            app:layout_constraintTop_toBottomOf="@id/receiver" />
+
+        <TextView
+            android:id="@+id/ergpou"
+            style="@style/Wrapped"
+            android:layout_marginTop="@dimen/margin"
+            android:text="@string/ergpou"
+            android:textColor="@color/gray_4C4D4D"
+            android:textSize="@dimen/text_small"
+            app:fontFamily="@string/font_family_medium"
+            app:layout_constraintStart_toStartOf="@id/receiver"
+            app:layout_constraintTop_toBottomOf="@id/receiverFullName" />
+
+        <TextView
+            android:id="@+id/ergpouNumber"
+            style="@style/Wrapped"
+            android:layout_marginTop="@dimen/margin_half"
+            android:text="@string/my_credit_egrpou"
+            android:textColor="@color/gray_alpha_80_4C4D4D"
+            android:textSize="@dimen/text_middle"
+            app:layout_constraintStart_toStartOf="@id/ergpou"
+            app:layout_constraintTop_toBottomOf="@id/ergpou" />
+
+        <View
+            android:id="@+id/smallDivider"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:background="@color/gray_alpha_10_000000"
+            app:layout_constraintBottom_toBottomOf="@id/ergpouNumber"
+            app:layout_constraintEnd_toEndOf="@id/payoutBlockBackground"
+            app:layout_constraintStart_toStartOf="@id/payoutBlockBackground"
+            app:layout_constraintTop_toTopOf="@id/ergpou" />
+
+        <TextView
+            android:id="@+id/bank"
+            style="@style/Wrapped"
+            android:layout_marginLeft="@dimen/margin"
+            android:layout_marginStart="@dimen/margin"
+            android:text="@string/bank"
+            android:textColor="@color/gray_4C4D4D"
+            android:textSize="@dimen/text_small"
+            app:fontFamily="@string/font_family_medium"
+            app:layout_constraintStart_toEndOf="@id/smallDivider"
+            app:layout_constraintTop_toTopOf="@id/ergpou" />
+
+        <TextView
+            style="@style/Wrapped"
+            android:layout_marginTop="@dimen/margin_half"
+            android:text="@string/privat_bank"
+            android:textColor="@color/gray_alpha_80_4C4D4D"
+            android:textSize="@dimen/text_middle"
+            app:layout_constraintStart_toStartOf="@id/bank"
+            app:layout_constraintTop_toBottomOf="@id/bank" />
+
+        <TextView
+            android:id="@+id/mfo"
+            style="@style/Wrapped"
+            android:layout_marginTop="@dimen/margin"
+            android:text="@string/mfo"
+            android:textColor="@color/gray_4C4D4D"
+            android:textSize="@dimen/text_small"
+            app:fontFamily="@string/font_family_medium"
+            app:layout_constraintStart_toStartOf="@id/receiver"
+            app:layout_constraintTop_toBottomOf="@id/ergpouNumber" />
+
+        <TextView
+            android:id="@+id/mfoNumber"
+            style="@style/Wrapped"
+            android:layout_marginTop="@dimen/margin_half"
+            android:text="@string/my_credit_mfo"
+            android:textColor="@color/gray_alpha_80_4C4D4D"
+            android:textSize="@dimen/text_middle"
+            app:layout_constraintStart_toStartOf="@id/mfo"
+            app:layout_constraintTop_toBottomOf="@id/mfo" />
+
+        <View
+            android:id="@+id/secondSmallDivider"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:background="@color/gray_alpha_10_000000"
+            app:layout_constraintBottom_toBottomOf="@id/mfoNumber"
+            app:layout_constraintEnd_toEndOf="@id/payoutBlockBackground"
+            app:layout_constraintStart_toStartOf="@id/payoutBlockBackground"
+            app:layout_constraintTop_toTopOf="@id/mfo" />
+
+        <TextView
+            android:id="@+id/count"
+            style="@style/Wrapped"
+            android:layout_marginLeft="@dimen/margin"
+            android:layout_marginStart="@dimen/margin"
+            android:text="@string/account"
+            android:textColor="@color/gray_4C4D4D"
+            android:textSize="@dimen/text_small"
+            app:fontFamily="@string/font_family_medium"
+            app:layout_constraintStart_toEndOf="@id/secondSmallDivider"
+            app:layout_constraintTop_toTopOf="@id/mfo" />
+
+        <TextView
+            android:id="@+id/countNumber"
+            style="@style/Wrapped"
+            android:layout_marginTop="@dimen/margin_half"
+            android:text="@string/my_credit_bank_account"
+            android:textColor="@color/gray_alpha_80_4C4D4D"
+            android:textSize="@dimen/text_middle"
+            app:layout_constraintStart_toStartOf="@id/count"
+            app:layout_constraintTop_toBottomOf="@id/count" />
+
+        <TextView
+            android:id="@+id/payoutPoint"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin"
+            android:text="@string/payout_appointment"
+            android:textColor="@color/gray_4C4D4D"
+            android:textSize="@dimen/text_small"
+            app:fontFamily="@string/font_family_medium"
+            app:layout_constraintStart_toStartOf="@id/receiver"
+            app:layout_constraintTop_toBottomOf="@id/mfoNumber" />
+
+        <TextView
+            android:id="@+id/payoutPointText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_half"
+            android:text="@{viewModel.repaymentType.title}"
+            android:textSize="@dimen/text_middle"
+            app:layout_constraintStart_toStartOf="@id/payoutPoint"
+            app:layout_constraintTop_toBottomOf="@id/payoutPoint" />
+
+        <TextView
+            android:id="@+id/sum"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin"
+            android:text="@string/sum"
+            android:textColor="@color/gray_4C4D4D"
+            android:textSize="@dimen/text_small"
+            app:fontFamily="@string/font_family_medium"
+            app:layout_constraintStart_toStartOf="@id/receiver"
+            app:layout_constraintTop_toBottomOf="@id/payoutPointText" />
+
+        <TextView
+            android:id="@+id/sumText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_half"
+            android:text="@{@string/repayment_less_than_pattern(viewModel.repaymentType.amount)}"
+            android:textColor="@color/gray_alpha_80_4C4D4D"
+            android:textSize="@dimen/text_middle"
+            app:layout_constraintStart_toStartOf="@id/sum"
+            app:layout_constraintTop_toBottomOf="@id/sum" />
+
+        <View
+            android:id="@+id/bottomDivider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/margin_middle"
+            android:background="@color/gray_alpha_10_000000"
+            app:layout_constraintEnd_toEndOf="@id/payoutBlockBackground"
+            app:layout_constraintStart_toStartOf="@id/payoutBlockBackground"
+            app:layout_constraintTop_toBottomOf="@id/sumText" />
+
+        <TextView
+            android:id="@+id/textWithBank"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_middle"
+            android:layout_marginEnd="@dimen/margin"
+            android:layout_marginLeft="@dimen/margin"
+            android:layout_marginStart="@dimen/margin"
+            android:layout_marginTop="@dimen/margin_big"
+            android:drawableLeft="@drawable/ic_bank"
+            android:drawablePadding="@dimen/margin_middle"
+            android:drawableStart="@drawable/ic_bank"
+            android:text="@string/bank_offices_info"
+            android:textColor="@color/gray_alpha_80_4C4D4D"
+            android:textSize="@dimen/text_small"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/payoutBlockBackground" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_big"
+            android:layout_marginTop="@dimen/margin_big"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textWithBank">
+
+            <LinearLayout
+                android:id="@+id/firstColumn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin"
+                android:layout_marginStart="@dimen/margin"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textWithBank">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/green_circle"
+                    android:drawablePadding="@dimen/margin"
+                    android:drawableStart="@drawable/green_circle"
+                    android:text="@string/privatBank"
+                    android:textSize="@dimen/text_premiddle" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_half"
+                    android:drawableLeft="@drawable/green_circle"
+                    android:drawablePadding="@dimen/margin"
+                    android:drawableStart="@drawable/green_circle"
+                    android:text="@string/prominvest"
+                    android:textSize="@dimen/text_premiddle" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_half"
+                    android:drawableLeft="@drawable/green_circle"
+                    android:drawablePadding="@dimen/margin"
+                    android:drawableStart="@drawable/green_circle"
+                    android:text="@string/bank_aval"
+                    android:textSize="@dimen/text_premiddle" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_half"
+                    android:drawableLeft="@drawable/green_circle"
+                    android:drawablePadding="@dimen/margin"
+                    android:drawableStart="@drawable/green_circle"
+                    android:text="@string/ukr_bank"
+                    android:textSize="@dimen/text_premiddle" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_half"
+                    android:drawableLeft="@drawable/green_circle"
+                    android:drawablePadding="@dimen/margin"
+                    android:drawableStart="@drawable/green_circle"
+                    android:text="@string/sberbank"
+                    android:textSize="@dimen/text_premiddle" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/margin"
+                android:paddingStart="@dimen/margin"
+                app:layout_constraintStart_toEndOf="@id/firstColumn"
+                app:layout_constraintTop_toBottomOf="@id/textWithBank"
+                app:layout_constraintTop_toTopOf="@id/firstColumn">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/green_circle"
+                    android:drawablePadding="@dimen/margin"
+                    android:drawableStart="@drawable/green_circle"
+                    android:text="@string/alfa_bank"
+                    android:textSize="@dimen/text_premiddle" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_half"
+                    android:drawableLeft="@drawable/green_circle"
+                    android:drawablePadding="@dimen/margin"
+                    android:drawableStart="@drawable/green_circle"
+                    android:text="@string/oshad_bank"
+                    android:textSize="@dimen/text_premiddle" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_half"
+                    android:drawableLeft="@drawable/green_circle"
+                    android:drawablePadding="@dimen/margin"
+                    android:drawableStart="@drawable/green_circle"
+                    android:text="@string/ukr_soc_bank"
+                    android:textSize="@dimen/text_premiddle" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_half"
+                    android:drawableLeft="@drawable/green_circle"
+                    android:drawablePadding="@dimen/margin"
+                    android:drawableStart="@drawable/green_circle"
+                    android:text="@string/vtb_bank"
+                    android:textSize="@dimen/text_premiddle" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

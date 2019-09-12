@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="ua.mycredit.mycredit.ui.bases.input.TextDialogViewModel" />
+
+        <variable
+            name="viewModel"
+            type="TextDialogViewModel" />
+    </data>
+
+    <FrameLayout
+        style="@style/Wide"
+        android:visibility="visible"
+        app:fadeOut="@={viewModel.fadeOut}">
+
+        <include
+            layout="@layout/input_picker_layout"
+            app:error="@{viewModel.error}"
+            app:hintRes="@{viewModel.hintRes}"
+            app:onClick="@{() -> viewModel.pick()}"
+            app:title="@{viewModel.titleRes}"
+            app:value="@{viewModel.validatedInput}" />
+
+    </FrameLayout>
+
+</layout>

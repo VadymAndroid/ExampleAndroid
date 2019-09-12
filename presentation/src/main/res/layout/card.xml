@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+
+        <import type="ua.mycredit.core.Card" />
+
+        <import type="ua.mycredit.mycredit.mapping.CardKt" />
+
+        <import type="android.graphics.Typeface" />
+
+        <import type="android.view.View.OnClickListener" />
+
+        <variable
+            name="card"
+            type="Card" />
+
+        <variable
+            name="onClick"
+            type="OnClickListener" />
+
+        <variable
+            name="checked"
+            type="boolean" />
+
+        <variable
+            name="selectable"
+            type="boolean" />
+
+        <variable
+            name="forciblyColored"
+            type="boolean" />
+
+    </data>
+
+    <android.support.v7.widget.CardView
+        style="@style/Wide"
+        android:visibility="@{card != null}"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="@dimen/margin_half"
+        app:cardElevation="@dimen/margin_short"
+        app:cardUseCompatPadding="true">
+
+        <android.support.constraint.ConstraintLayout
+            style="@style/Wide"
+            android:layout_height="72dp"
+            android:background="@{card.main ? @drawable/bg_selected_card_primary : null}"
+            android:onClick="@{onClick}">
+
+            <RadioButton
+                android:id="@+id/radiobutton"
+                style="@style/Wrapped"
+                android:layout_marginLeft="@dimen/margin"
+                android:layout_marginStart="@dimen/margin"
+                android:checked="@{checked}"
+                android:clickable="false"
+                android:visibility="@{selectable, default=gone}"
+                app:buttonTintList="@{card.verified ? @color/colorPrimary : @color/gray}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/menu"
+                style="@style/Tall.Ripple.Borderless"
+                android:layout_gravity="end|center_vertical"
+                android:contentDescription="@null"
+                android:onClick="@{onClick}"
+                android:padding="@dimen/margin_half"
+                android:src="@drawable/ic_more_vert_gray"
+                android:visibility="@{!selectable &amp;&amp; onClick != null, default=gone}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/payment_system_logo"
+                style="@style/Wrapped"
+                android:layout_gravity="end|center_vertical"
+                android:layout_marginEnd="@dimen/margin"
+                android:layout_marginRight="@dimen/margin"
+                android:contentDescription="@null"
+                app:imageResource="@{card == null ? 0 : CardKt.getPaymentIconId(card, forciblyColored)}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/menu"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/ic_visa_colored" />
+
+            <TextView
+                android:id="@+id/card_number"
+                style="@style/WeightedHorizontallyWrapped"
+                android:layout_gravity="top"
+                android:layout_marginLeft="@dimen/margin"
+                android:layout_marginStart="@dimen/margin"
+                android:paddingBottom="@dimen/margin_half"
+                android:paddingTop="@dimen/margin"
+                android:text="@{card.number}"
+                android:textAppearance="@android:style/TextAppearance.Medium"
+                android:textColor="@{card.main ? @color/colorPrimary : @color/gray_828282}"
+                app:layout_constraintEnd_toStartOf="@+id/payment_system_logo"
+                app:layout_constraintStart_toEndOf="@id/radiobutton"
+                app:layout_constraintTop_toTopOf="parent"
+                app:typeface="@{card.main ? Typeface.DEFAULT_BOLD : Typeface.DEFAULT}"
+                tools:text="0000 0000 0000 0000" />
+
+            <ViewSwitcher
+                style="@style/WeightedHorizontallyWrapped"
+                android:layout_gravity="bottom"
+                android:paddingBottom="@dimen/margin"
+                app:displayedChild="@{card.verified ? 0 : 1}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/payment_system_logo"
+                app:layout_constraintStart_toStartOf="@id/card_number"
+                app:layout_constraintTop_toBottomOf="@id/card_number">
+
+                <TextView
+                    style="@style/Wide"
+                    android:text="@{@string/fraction_pattern(card.mm, card.yy)}"
+                    android:textColor="@{card.main ? @color/black : @color/gray_828282}"
+                    app:typeface="@{card.main ? Typeface.DEFAULT_BOLD : Typeface.DEFAULT}"
+                    tools:text="11/22" />
+
+                <TextView
+                    style="@style/Wide"
+                    android:text="@string/card_not_verified"
+                    android:textColor="@{card.main ? @color/red : @color/red_DB5C60}" />
+
+            </ViewSwitcher>
+
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v7.widget.CardView>
+
+</layout>
